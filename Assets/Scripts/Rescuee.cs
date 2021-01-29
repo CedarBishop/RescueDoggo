@@ -15,6 +15,7 @@ public class Rescuee : Interactables
         }
 
         hasBeenRescued = true;
+        Debug.Log("RESCUED " + transform.name);
         GameManager.instance.AddToScore(scoreAddedForRescue);
         Destroy(gameObject,0.1f);
         return true;

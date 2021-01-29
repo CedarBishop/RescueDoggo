@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private float gravityMultiplier;
 
+    // Interact
+    private BoxCollider interactionArea;
+    [HideInInspector] public List<Transform> interactableObjects;
 
     public LayerMask WorldLayerMask;
 
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
         mainCam.Follow = transform;
         //rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
+        interactionArea = GetComponentInChildren<BoxCollider>();
     }
 
     // Start is called before the first frame update
@@ -95,7 +99,19 @@ public class PlayerController : MonoBehaviour
 
     void OnInteract()
     {
-
+        Transform closestObject = null;
+        float distance = Mathf.Infinity;
+        foreach(Transform t in interactableObjects)
+        {
+            if (Vector3.Distance(transform.position, t.position) < distance)
+            {
+                closestObject = t;
+            }
+        }
+        if (closestObject != null)
+        {
+            closestObject.GetComponent<Interactables>().Interact();
+        }
     }
 
     void OnJump()
