@@ -14,7 +14,10 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 movementValue;
     [SerializeField] private float speed;
-    [SerializeField] private Rigidbody rb;
+    //[SerializeField] private Rigidbody rb;
+    [SerializeField] private CharacterController cc;
+
+    public LayerMask WorldLayerMask;
 
     private PlayerInput playerInput;
 
@@ -22,17 +25,9 @@ public class PlayerController : MonoBehaviour
     {
         mainCam = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
         mainCam.Follow = transform;
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
+        cc = GetComponent<CharacterController>();
     }
-    //private void OnEnable()
-    //{
-    //    playerInput.enabled = true;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    playerInput.enabled = false;
-    //}
 
     // Start is called before the first frame update
     void Start()
@@ -40,32 +35,45 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //mainCam.transform.position = transform.position + mainCamOffset;
-        //mainCam.tar
+        Movement();
+        RotateTowardsDirection();
     }
 
     private void FixedUpdate()
     {
-        Movement();
     }
 
     void OnMove(InputValue value)
     {
         movementValue = value.Get<Vector2>();
-        //Debug.Log(movementValue);
     }
 
     void Movement()
     {
+        cc.Move(Vector3.Normalize((Vector3.right * movementValue.x) + (Vector3.forward * movementValue.y)) * speed * Time.deltaTime);
+        cc.Move(Physics.gravity * Time.deltaTime);    
+    }
+
+    void RotateTowardsDirection()
+    {
+        Vector3 direction = Vector3.Normalize((Vector3.right * movementValue.x) + (Vector3.forward * movementValue.y));
+        //Debug.DrawLine(transform.position, transform.position + direction, Color.red);
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, WorldLayerMask))
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+        }
         if (movementValue != Vector2.zero)
         {
-            //rb.velocity = ((transform.right * movementValue.x) + (transform.forward * movementValue.y)) * speed;
-            rb.velocity = ((Vector3.right * movementValue.x) + (Vector3.forward * movementValue.y)) * speed;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.15F);
         }
-        //Debug.Log(rb.velocity);
+
+        // Rotate the player to the angel of the terrain
+        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(hit.normal), 0.15F);
+        //Debug.Log(hit.normal);
     }
 
     void OnBark()
