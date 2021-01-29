@@ -7,13 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public Spawner spawner;
+
     public int score;
     public float secondsInDay;
     public Light light;
     public Transform lightStartLocation;
     public Transform lightEndLocation;
-    public Color[] lightColorsOverDay;
     public float colorLerpSpeed;
+    public Color[] lightColorsOverDay;
 
     private float timer;
     private int lightColorIndex;
@@ -59,6 +61,7 @@ public class GameManager : MonoBehaviour
     public void StartDay ()
     {
         timer = secondsInDay;
+        spawner.OnStartDay();
         dayIsUnderway = true;
         lightColorIndex = 0;
         light.transform.position = lightStartLocation.position;
