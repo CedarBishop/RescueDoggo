@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Interactables : MonoBehaviour
 {
-    public virtual void Interact ()
+    public virtual bool Interact ()
     {
-
+        return true;
     }
 }

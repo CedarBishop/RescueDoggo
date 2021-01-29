@@ -50,8 +50,10 @@ public class GameManager : MonoBehaviour
                 timer -= Time.deltaTime;
             }
             light.transform.Translate(((lightEndLocation.position - lightStartLocation.position) / secondsInDay) * Time.deltaTime);
+            LerpLightColor();
+            UIManager.instance.SetTimeOfDayProgress(timer, secondsInDay);
+
         }
-        LerpLightColor();
     }
 
     public void StartDay ()
@@ -60,6 +62,8 @@ public class GameManager : MonoBehaviour
         dayIsUnderway = true;
         lightColorIndex = 0;
         light.transform.position = lightStartLocation.position;
+        score = 0;
+        UIManager.instance.SetScore(score);
     }
 
     public void EndDay ()
@@ -91,6 +95,12 @@ public class GameManager : MonoBehaviour
         {
             light.color = Color.Lerp(light.color, lightColorsOverDay[lightColorIndex], (colorLerpSpeed * lightColorsOverDay.Length / secondsInDay) * Time.deltaTime);
         }
+    }
+
+    public void AddToScore (int scoreAdded)
+    {
+        score += scoreAdded;
+        UIManager.instance.SetScore(score);
     }
 
 
