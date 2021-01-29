@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Clues : MonoBehaviour
+public class Clues : Interactables
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool Interact()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return true;
     }
 }
