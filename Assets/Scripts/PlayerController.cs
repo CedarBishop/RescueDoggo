@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput playerInput;
 
+    [SerializeField] private ParticleSystem psBark;
+
     private void Awake()
     {
         mainCam = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     void OnBark()
     {
-
+        psBark.Play();
     }
 
     void OnInteract()
