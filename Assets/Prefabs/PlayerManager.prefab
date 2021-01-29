@@ -106,10 +106,12 @@ MonoBehaviour:
   movementValue: {x: 0, y: 0}
   speed: 4
   cc: {fileID: 0}
+  jumpHeight: 0
+  gravityMultiplier: 0
   WorldLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  psBark: {fileID: 0}
+  psBark: {fileID: 474466549515429151}
 --- !u!114 &557041628914471728
 MonoBehaviour:
   m_ObjectHideFlags: 0
