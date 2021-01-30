@@ -74,7 +74,6 @@ public class Waypoints : Interactables
             {
                 trailDistance = newTrailDistance;
                 newTrailDistance = Vector3.Distance(currentSmellFX.transform.position, nextWaypoint.position);
-                Debug.Log("NEW DIST: " + newTrailDistance + "\nOLD DIST: " + trailDistance);
                 currentSmellFX.transform.Translate((nextWaypoint.position - player.transform.position).normalized * Time.deltaTime * smellSpeed);
                 yield return null;
             }

@@ -8,6 +8,8 @@ public class DialoguePrompt : Interactables
     [SerializeField] private LayerMask playerLayer;
     public GameObject dialogueAlert;
 
+    public string text = "<MISSING TEXT>";
+
     private Rigidbody rb;
 
     private void Awake()
@@ -23,7 +25,7 @@ public class DialoguePrompt : Interactables
     {
 
         dialogueAlert.SetActive(false);
-        UIManager.instance.ToggleDialogueCanvas(transform.position + Vector3.up * 3, "I can't read...");
+        UIManager.instance.ToggleDialogueCanvas(transform.position + Vector3.up * 3, text);
         return true;
     }
 
