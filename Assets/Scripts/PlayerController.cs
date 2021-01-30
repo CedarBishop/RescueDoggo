@@ -136,7 +136,10 @@ public class PlayerController : MonoBehaviour
 
     void OnJump()
     {
-        yVelocity = (jumpHeight * -2 * (Physics.gravity.y * gravityMultiplier));
+        if (isGrounded)
+        {
+            yVelocity = (jumpHeight * -2 * (Physics.gravity.y * gravityMultiplier));
+        }
     }
 
     void OnPause()
