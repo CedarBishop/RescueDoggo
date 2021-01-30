@@ -159,6 +159,10 @@ public class PlayerController : MonoBehaviour
                 //mainCam.LookAt
                 // Zoom camera to look at object
                 transitionCamera = !transitionCamera;
+                if (transitionCamera == false)
+                {
+                    closestObject.GetComponent<DialoguePrompt>().dialogueAlert.SetActive(true);
+                }
             }
         }
     }
