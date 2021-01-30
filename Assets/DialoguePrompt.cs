@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class DialoguePrompt : Interactables
 {
@@ -8,6 +9,8 @@ public class DialoguePrompt : Interactables
     public GameObject dialogueAlert;
 
     private Rigidbody rb;
+
+    public Vector3 zoomAmount;
 
     private void Awake()
     {
@@ -28,5 +31,11 @@ public class DialoguePrompt : Interactables
     {
         base.TriggerExit();
         dialogueAlert.SetActive(false);
+    }
+
+    public void FocusObject(CinemachineVirtualCamera cvc)
+    {
+        cvc.LookAt = gameObject.transform;
+        cvc.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset -= zoomAmount;
     }
 }
