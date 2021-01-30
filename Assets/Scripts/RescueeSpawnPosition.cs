@@ -21,6 +21,7 @@ public class RescueeSpawnPosition : MonoBehaviour
         foreach (Waypoints item in pathway)
         {
             item.Deactivate();
+            Destroy(item.gameObject);
         }
     }
 }

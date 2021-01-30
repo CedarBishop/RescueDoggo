@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smellSpeed: 6
+  footstepsPrefab: {fileID: 2607187098892703551, guid: bc2bfd55ad86da84b90087c3aaa4e34e, type: 3}
   smellTrailPrefab: {fileID: 3403896048177115395, guid: 43c76808180a29e43ab8ee7f631cd0b8, type: 3}
 --- !u!135 &1254742525309715924
 SphereCollider:
