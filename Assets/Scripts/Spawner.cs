@@ -19,24 +19,40 @@ public class Spawner : MonoBehaviour
 
     void SpawnRescuees()
     {
-        rescuees = new List<Rescuee>();
         if (rescueeSpawnLocations == null)
         {
             return;
         }
-        rescuees.Clear();
+
+        rescuees = new List<Rescuee>();
 
         List<RescueeSpawnPosition> spawnLocations = new List<RescueeSpawnPosition>();
 
-        for (int i = 0; i < rescueeSpawnLocations.Length; i++)
+        if (rescueeSpawnLocations.Length == 1)
         {
-            spawnLocations.Add(rescueeSpawnLocations[i]);
+            spawnLocations.Add(rescueeSpawnLocations[0]);
+        }
+        else
+        {
+            for (int i = 0; i < rescueeSpawnLocations.Length; i++)
+            {
+                spawnLocations.Add(rescueeSpawnLocations[i]);
+            }
         }
 
 
         for (int i = 0; i < amountOfRescueesToSpawn; i++)
         {
-            RescueeSpawnPosition location = spawnLocations[Random.Range(0, spawnLocations.Count)];
+            RescueeSpawnPosition location;
+            if (spawnLocations.Count == 1)
+            {
+                location = spawnLocations[0];
+            }
+            else
+            {
+                location = spawnLocations[Random.Range(0, spawnLocations.Count)];
+            }
+            
             spawnLocations.Remove(location);
             Rescuee rescuee = (Instantiate(rescueePrefab, location.transform.position, Quaternion.identity));
             rescuee.Init(location);

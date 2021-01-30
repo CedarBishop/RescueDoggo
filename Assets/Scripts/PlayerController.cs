@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     // Jump
     [SerializeField] private float jumpHeight;
     [SerializeField] private float gravityMultiplier;
+    [SerializeField] private Transform groundCheckPosition;
+    [SerializeField] private float groundCheckRadius;
 
     // Interact
     private BoxCollider interactionArea;
@@ -34,6 +36,10 @@ public class PlayerController : MonoBehaviour
     private UIManager uiManager;
 
     [SerializeField] private ParticleSystem psBark;
+
+    private float yVelocity;
+    private bool isGrounded;
+
 
     private void Awake()
     {
@@ -52,7 +58,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-            Movement();
+        isGrounded = Physics.CheckSphere(groundCheckPosition.position, groundCheckRadius, WorldLayerMask);
+
+         Movement();
 
         // Whilst in runtime, allow rotation. You can rotate doggo paused otherwise
         if (Time.timeScale != 0)
@@ -61,8 +69,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    void UpdateYVelocity()
     {
+        if (isGrounded && yVelocity < 0)
+        {
+            yVelocity = -2f;
+        }
+
+        yVelocity += (Physics.gravity.y * gravityMultiplier) * Time.deltaTime;
     }
 
     void OnMove(InputValue value)
@@ -73,7 +87,7 @@ public class PlayerController : MonoBehaviour
     void Movement()
     {
         cc.Move(Vector3.Normalize((Vector3.right * movementValue.x) + (Vector3.forward * movementValue.y)) * speed * Time.deltaTime);
-        //cc.Move(Physics.gravity * Time.deltaTime);    
+        cc.Move(new Vector3(0, yVelocity, 0) * Time.deltaTime);    
     }
 
     void RotateTowardsDirection()
@@ -122,7 +136,10 @@ public class PlayerController : MonoBehaviour
 
     void OnJump()
     {
-        cc.Move(Vector3.up * jumpHeight * Time.deltaTime);
+        if (isGrounded)
+        {
+            yVelocity = (jumpHeight * -2 * (Physics.gravity.y * gravityMultiplier));
+        }
     }
 
     void OnPause()
