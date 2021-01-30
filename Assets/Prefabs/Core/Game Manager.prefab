@@ -190,6 +190,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   snowParticle: {fileID: 0}
   windParticle: {fileID: 0}
+  rescuedPersonNames: []
 --- !u!114 &7873264999296294305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +203,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93957054c288fa44be44f046deb7323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rescueeNames:
+    names:
+    - John Smith
+    - Esteban Breece
+    - Leila Gutter
+    - Micah Crean
+    - Chuck Clingerman
+    - Cathrine Hilyard
+    - Billy Kissell
+    - Roxie Lyford
+    - Madie Harriston
+    - Camelia Voisine
+    - Rodrick Florence
+    - Wayne Dowler
+    - Charlene Mackenzie
+    - Cedar Bishop
+    - Max Heins
+    - Ivan Karyakin
+    - Guido Gautsch
+    - Jessica Fredricksen
+    - Shaleise-rose Leishman
   rescueePrefab: {fileID: 2442491696607122063, guid: 52a9420c47652024da235d1ccf1a529d, type: 3}
   rescueeSpawnLocations: []
   amountOfRescueesToSpawn: 3
