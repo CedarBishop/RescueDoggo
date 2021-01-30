@@ -127,14 +127,39 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Movement", temp);
         }
 
-        cc.Move(Vector3.Normalize((Vector3.right * movementValue.x) + (Vector3.forward * movementValue.y)) * speed * Time.deltaTime);
+        // Static World Based Movement
+        //cc.Move(Vector3.Normalize((Vector3.right * movementValue.x) + (Vector3.forward * movementValue.y)) * speed * Time.deltaTime);
+
+        // Camera Relative Movement
+        Vector3 camForward = mainCam.transform.forward;
+        camForward = new Vector3(camForward.x, 0, camForward.z);
+
+        Vector3 camRight = mainCam.transform.right;
+        camRight = new Vector3(camRight.x, 0, camRight.z);
+
+        Vector3 direction = Vector3.Normalize((camRight * movementValue.x) + (camForward * movementValue.y));
+        cc.Move(direction * speed * Time.deltaTime);
+
+
+        // Jump Velocity
         cc.Move(new Vector3(0, yVelocity, 0) * Time.deltaTime);    
     }
 
     void RotateTowardsDirection()
     {
-        Vector3 direction = Vector3.Normalize((Vector3.right * movementValue.x) + (Vector3.forward * movementValue.y));
-        //Debug.DrawLine(transform.position, transform.position + direction, Color.red);
+
+        // Static World Rotation
+        //Vector3 direction = Vector3.Normalize((Vector3.right * movementValue.x) + (Vector3.forward * movementValue.y));
+
+        // Camera Relative Rotation
+        Vector3 camForward = mainCam.transform.forward;
+        camForward = new Vector3(camForward.x, 0, camForward.z);
+
+        Vector3 camRight = mainCam.transform.right;
+        camRight = new Vector3(camRight.x, 0, camRight.z);
+
+        Vector3 direction = Vector3.Normalize((camRight * movementValue.x) + (camForward * movementValue.y));
+
 
         if (movementValue != Vector2.zero)
         {
