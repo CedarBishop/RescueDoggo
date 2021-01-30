@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour
 
     public int score;
     public float secondsInDay;
-    public Light light;
-    public Transform lightStartLocation;
-    public Transform lightEndLocation;
+    public Light mainLight;
+    public Light rimLight;
+    public Vector3 lightStartRotation;
+    public Vector3 lightEndRotation;
     public float colorLerpSpeed;
     public Color[] lightColorsOverDay;
     public Gradient colorGradient;
@@ -27,6 +28,9 @@ public class GameManager : MonoBehaviour
     private int lightColorIndex;
 
     private bool dayIsUnderway;
+
+    private float mainLightXRotation;
+    private float rimLightXRotation;
 
     void Awake()
     {
@@ -57,7 +61,12 @@ public class GameManager : MonoBehaviour
             {
                 timer -= Time.deltaTime;
             }
-            light.transform.Translate(((lightEndLocation.position - lightStartLocation.position) / secondsInDay) * Time.deltaTime);
+
+            float amount = (lightEndRotation.x - lightStartRotation.x) / secondsInDay * Time.deltaTime;
+            mainLightXRotation += amount;
+            mainLight.transform.rotation = Quaternion.Euler(new Vector3(mainLightXRotation, 0,0));
+            rimLightXRotation -= amount;
+            rimLight.transform.rotation = Quaternion.Euler(new Vector3(rimLightXRotation, 0, 0));
             LerpLightColor();
             UIManager.instance.SetTimeOfDayProgress(timer, secondsInDay);
         }
@@ -71,7 +80,10 @@ public class GameManager : MonoBehaviour
         spawner.OnStartDay();
         dayIsUnderway = true;
         lightColorIndex = 0;
-        light.transform.position = lightStartLocation.position;
+        mainLight.transform.rotation = Quaternion.Euler(lightStartRotation);
+        mainLightXRotation = lightStartRotation.x;
+        rimLight.transform.rotation = Quaternion.Euler(lightEndRotation);
+        rimLightXRotation = lightEndRotation.x;
         score = 0;
         UIManager.instance.ChangeMenu(UIState.Game);
         UIManager.instance.SetScore(score);
@@ -95,7 +107,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         
-        if (light.color == lightColorsOverDay[lightColorIndex])
+        if (mainLight.color == lightColorsOverDay[lightColorIndex])
         {
             if (lightColorIndex < lightColorsOverDay.Length - 1)
             {
@@ -106,7 +118,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            light.color = Color.Lerp(light.color, lightColorsOverDay[lightColorIndex], (colorLerpSpeed * lightColorsOverDay.Length / secondsInDay) * Time.deltaTime);
+            mainLight.color = Color.Lerp(mainLight.color, lightColorsOverDay[lightColorIndex], (colorLerpSpeed * lightColorsOverDay.Length / secondsInDay) * Time.deltaTime);
         }
     }
 
