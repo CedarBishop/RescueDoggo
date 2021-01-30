@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
         if (movementValue != Vector2.zero)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.025F);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.05F);
         }
 
         RaycastHit hit;
