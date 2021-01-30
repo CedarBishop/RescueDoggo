@@ -95,4 +95,4 @@ CapsuleCollider:
   m_Radius: 2.733999
   m_Height: 11.729266
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: -0.00000011920929}
+  m_Center: {x: 0, y: 5.868236, z: -0.00000011920929}

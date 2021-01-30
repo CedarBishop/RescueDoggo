@@ -1,0 +1,67 @@
+[Version 2.1.0b1]
+Work started on Path Painter under Unity 5.6. This was almost 3 years before neighbour terrain tiles appeared, and supporting such thing didn't even cross the author, Frank's mind, who was new to Unity at the time.
+Version 2 is pretty much a complete rewrite to add that feature. All these features are available in all supported Unity versions (Unity 5.6 and onwards).
+
+Enhancements:
+· Improved texturing and straight line performance and a number of other performance optimisation (needed for the more taxing new functionalities).
+· Thanks to these performance improvements, the max brush sizes were greatly increased.
+· [New] Paint across several terrain tiles.
+· [New] Auto Terrain Layer (SplatPrototype in older Unity) propagation.
+· Removed the camera from the Demo Scene, because new Unity versions didn't like a camera that was also compatible with older versions.
+· [New] Improved GUI.
+· [New] Shaping, Texturing and Vegetation Clearing can all be toggled separately.
+· [New] Help System with better information.
+· Improved tooltips
+· The API Painter is no longer static, so one can use several instances of it with different settings.
+· The API also supports multi tile painting.
+· [New] API 3D Painting - The paths height sticks to the spline, or other points provided. (See documentation for more info)
+· [New] API Bulk Painting. Use for the best performance when painting several paths at once. (See documentation for more info)
+· The API now takes both a List or an Array of points. Use the overload that best suits your data for best performance.
+· [New] Path Painter now remembers your settings for each of your projects, so you can pick up where you left off.
+· Improved import and compilation.
+· Some improvements to avoid unnecessary value boxing in stroke calculations.
+· The demo scene now contains 6 tiles of the demo terrain to provide a multi-tile playground.
+
+Fixes:
+· [Fix] Toggle buttons' toggled state was not visible in new Unity (2019.3+) due to Unity's new GUI system.
+· [Fix] Path Painter could not be saved in Editor Window Layout.
+· [Fix] Unused field warning that affected older Unity.
+· [Fix] Occasionally might have unintentionally affected the 'Draw Instanced' setting of terrains in new Unity versions.
+
+
+[Version 1.2.1]
+Enhancements:
+· Improved and optimised import & compilation, that result in better performance and reliability during play mode switches, Unity version upgrades, building and other events that involve import and compilation.
+
+
+[Version 1.2.0]
+Enhancements:
+· Path Painter now uses the 3D Haven folders.
+· Path Painter now uses the 3D Haven menu.
+· Improved import and compilation.
+· Added the first version of an API that for example can be used to paint paths along Pegasus splines (example in documentation).
+
+Fixes:
+· Fixed a glitch with the import package.
+
+
+[Version 1.1.1]
+Fixes:
+· Fix for import issue on 2019.1
+
+
+[Version 1.1]
+Enhancements:
+· The paint button is now bigger.
+· Changed the size hotkeys to CTRL+Q/E. 
+· Updated for 2018.3 to use the new terrain API.
+· Path Painter can now be placed into any directory.
+· Single active terrain is now automatically selected on open.
+· Made the status bar hotkey tips adapting to OSX (CTRL/CMD).
+· Added visualization to show the active line (editable) and display when straight painting.
+· Added a workaround for the Unity bug that causes things not to not render over the terrain in 2018.3.
+· Updated warning message for non-square terrains to make it more clear that only square terrains are supported.
+ 
+Fixes:
+· Stop null pointer exceptions when the environment changes. Path Painter should now do a much better job recovering from these situations.
+· Avoided cursor pointer exceptions on OSX.
