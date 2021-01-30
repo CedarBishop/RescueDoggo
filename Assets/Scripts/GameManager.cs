@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public float colorLerpSpeed;
     public Color[] lightColorsOverDay;
 
+
+    public ParticleSystem snowParticle;
+    public ParticleSystem windParticle;
+
     private float timer;
     private int lightColorIndex;
 
@@ -54,18 +58,19 @@ public class GameManager : MonoBehaviour
             light.transform.Translate(((lightEndLocation.position - lightStartLocation.position) / secondsInDay) * Time.deltaTime);
             LerpLightColor();
             UIManager.instance.SetTimeOfDayProgress(timer, secondsInDay);
-
         }
     }
 
     public void StartDay ()
     {
         timer = secondsInDay;
+        print("Start Day");
         spawner.OnStartDay();
         dayIsUnderway = true;
         lightColorIndex = 0;
         light.transform.position = lightStartLocation.position;
         score = 0;
+        UIManager.instance.ChangeMenu(UIState.Game);
         UIManager.instance.SetScore(score);
     }
 
@@ -92,6 +97,8 @@ public class GameManager : MonoBehaviour
             if (lightColorIndex < lightColorsOverDay.Length - 1)
             {
                 lightColorIndex++;
+                
+                
             }
         }
         else
@@ -104,6 +111,15 @@ public class GameManager : MonoBehaviour
     {
         score += scoreAdded;
         UIManager.instance.SetScore(score);
+    }
+
+    void IncreaseSnowAndWind ()
+    {
+        if (snowParticle != null)
+            snowParticle.emissionRate += 20;
+
+        if(windParticle != null)
+            windParticle.emissionRate += 4;
     }
 
 
