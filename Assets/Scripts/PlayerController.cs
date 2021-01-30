@@ -131,6 +131,11 @@ public class PlayerController : MonoBehaviour
         if (closestObject != null)
         {
             closestObject.GetComponent<Interactables>().Interact();
+            if (closestObject.GetComponent<DialoguePrompt>())
+            {
+                // Zoom camera to look at object
+                closestObject.GetComponent<DialoguePrompt>().FocusObject(mainCam);
+            }
         }
     }
 
