@@ -500,6 +500,10 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 2244597880758872495, guid: 249cfc8a47a51e94bb68ee01eb343638, type: 3}
+      propertyPath: secondsInDay
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244597880758872495, guid: 249cfc8a47a51e94bb68ee01eb343638, type: 3}
       propertyPath: snowParticle
       value: 
       objectReference: {fileID: 1045963902}
@@ -1116,9 +1120,9 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.7
       objectReference: {fileID: 0}
-    - target: {fileID: 557041630498149736, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 983
+    - target: {fileID: 557041629311397215, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
+      propertyPath: m_FollowOffset.y
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 557041630498149737, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1142,11 +1146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 557041630498149737, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000002225333
+      value: 0.00000002225333
       objectReference: {fileID: 0}
     - target: {fileID: 557041630498149737, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000009844203
+      value: -0.000000009844203
       objectReference: {fileID: 0}
     - target: {fileID: 557041631044376340, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1170,11 +1174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 557041631044376340, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000002225333
+      value: 0.00000002225333
       objectReference: {fileID: 0}
     - target: {fileID: 557041631044376340, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000009844203
+      value: -0.000000009844203
       objectReference: {fileID: 0}
     - target: {fileID: 4487700100124844663, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_Name
@@ -1395,9 +1399,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 679006561900984999, guid: 1350758e5633a8f41b3ec23efa807c9c, type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 679006561900984999, guid: 1350758e5633a8f41b3ec23efa807c9c, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430308218008278085, guid: 1350758e5633a8f41b3ec23efa807c9c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8056579375658684894, guid: 1350758e5633a8f41b3ec23efa807c9c, type: 3}
       propertyPath: m_Name
       value: UI Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056579375658684894, guid: 1350758e5633a8f41b3ec23efa807c9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8564467288894252706, guid: 1350758e5633a8f41b3ec23efa807c9c, type: 3}
       propertyPath: m_RootOrder

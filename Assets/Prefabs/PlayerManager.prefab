@@ -250,7 +250,7 @@ MonoBehaviour:
   m_LookaheadSmoothing: 1.5
   m_LookaheadIgnoreY: 0
   m_HorizontalDamping: 1.5
-  m_VerticalDamping: 1
+  m_VerticalDamping: 3
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
