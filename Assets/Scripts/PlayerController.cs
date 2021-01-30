@@ -43,6 +43,9 @@ public class PlayerController : MonoBehaviour
     private float yVelocity;
     private bool isGrounded;
 
+    // Animation
+    Animator animator;
+
 
     private void Awake()
     {
@@ -50,6 +53,7 @@ public class PlayerController : MonoBehaviour
         mainCam.Follow = transform;
         cc = GetComponent<CharacterController>();
         interactionArea = GetComponentInChildren<BoxCollider>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Start is called before the first frame update
@@ -109,6 +113,19 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
+        if (movementValue != Vector2.zero)
+        {
+            // Run Animation
+            float temp = Mathf.Lerp(animator.GetFloat("Movement"), 1, 5 * Time.deltaTime);
+            animator.SetFloat("Movement", temp);
+        }
+        else
+        {
+            // Idle Animation
+            float temp = Mathf.Lerp(animator.GetFloat("Movement"), 0, 15 * Time.deltaTime);
+            animator.SetFloat("Movement", temp);
+        }
+
         cc.Move(Vector3.Normalize((Vector3.right * movementValue.x) + (Vector3.forward * movementValue.y)) * speed * Time.deltaTime);
         cc.Move(new Vector3(0, yVelocity, 0) * Time.deltaTime);    
     }
@@ -138,6 +155,7 @@ public class PlayerController : MonoBehaviour
     void OnBark()
     {
         psBark.Play();
+        animator.SetTrigger("Bark");
     }
 
     void OnInteract()
@@ -171,8 +189,9 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded)
         {
-        print("OnJump");
             yVelocity = (jumpHeight * -2 * (Physics.gravity.y * gravityMultiplier));
+
+            animator.SetTrigger("Jump");
         }
     }
 
