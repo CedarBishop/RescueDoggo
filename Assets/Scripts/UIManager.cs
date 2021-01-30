@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
 
     public void ChangeMenu(UIState newMenu)
     {
-        MenuMain.SetActive(true);
+        MenuMain.SetActive(false);
         MenuGame.SetActive(false);
         MenuPause.SetActive(false);
         MenuOptions.SetActive(false);
@@ -155,6 +155,10 @@ public class UIManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        if (sceneName == "Main")
+        {
+            ChangeMenu(UIState.Main);
+        }
     }
 
     public void ToggleDialogueCanvas(Vector3 worldPosition, string textToDisplay)

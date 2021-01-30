@@ -46,7 +46,7 @@ public class ReportCard : MonoBehaviour
         foreach (string name in GameManager.instance.rescuedPersonNames)
         {
             Text entry = Instantiate(rescuedPersonEntryPrefab, verticalBox.transform);
-            entry.text = name;
+            entry.text = "- " + name;
 
             if (name == "Cedar Bishop" || name == "Max Heins" ||name == "Ivan Karyakin" ||
                 name == "Guido Gautsch" || name == "Jessica Fredricksen" || name == "Shaleise-rose Leishman")
