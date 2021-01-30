@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     // Camera
     [SerializeField] private CinemachineVirtualCamera mainCam;
     [SerializeField] private Vector3 mainCamOffset;
+    [SerializeField] private Vector3 mainCamZoomOffset;
+    public bool transitionCamera = false;
+    [SerializeField] private float zoomSpeed;
     [SerializeField] private float mainCamLookDistance;
     [SerializeField] private Transform mainCamLookTarget;
 
@@ -68,7 +71,26 @@ public class PlayerController : MonoBehaviour
         {
             RotateTowardsDirection();
         }
+        Vector3 followOffset = mainCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset;
+
+        // Smoothly swivel camera towards camera target
+        if (transitionCamera)
+        {
+            mainCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = Vector3.Slerp(followOffset, mainCamZoomOffset, zoomSpeed * Time.deltaTime);
+        }
+        else
+        {
+            mainCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = Vector3.Slerp(followOffset, mainCamOffset, zoomSpeed * Time.deltaTime);
+        }
+
+        //public void FocusObject(CinemachineVirtualCamera cvc, Vector3 targetPosition)
+        //{
+        //    cvc.LookAt = gameObject.transform;
+        //    cvc.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset -= targetPosition;       
+        
     }
+
+
 
     void UpdateYVelocity()
     {
@@ -134,8 +156,9 @@ public class PlayerController : MonoBehaviour
             closestObject.GetComponent<Interactables>().Interact();
             if (closestObject.GetComponent<DialoguePrompt>())
             {
+                //mainCam.LookAt
                 // Zoom camera to look at object
-                closestObject.GetComponent<DialoguePrompt>().FocusObject(mainCam);
+                transitionCamera = !transitionCamera;
             }
         }
     }

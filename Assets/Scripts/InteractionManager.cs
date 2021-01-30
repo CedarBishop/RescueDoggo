@@ -17,7 +17,7 @@ public class InteractionManager : MonoBehaviour
         {
             pc.interactableObjects.Add(other.transform);
             other.GetComponent<Interactables>().TriggerEnter();
-            Debug.Log("Added " + other.name + " to interactables");
+            //Debug.Log("Added " + other.name + " to interactables");
         }
     }
 
@@ -27,7 +27,7 @@ public class InteractionManager : MonoBehaviour
         {
             pc.interactableObjects.Remove(other.transform);
             other.GetComponent<Interactables>().TriggerExit();
-            Debug.Log("Removed " + other.name + " to interactables");
+            //Debug.Log("Removed " + other.name + " to interactables");
         }
     }
 }

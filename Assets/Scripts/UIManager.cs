@@ -144,9 +144,9 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void ActivateDialogueCanvas (Vector3 worldPosition, string textToDisplay)
+    public void ToggleDialogueCanvas(Vector3 worldPosition, string textToDisplay)
     {
-        dialogueCanvas.Activate(worldPosition, textToDisplay);
+        dialogueCanvas.ToggleActivation(worldPosition, textToDisplay);
     }
 
     public void DeactivateDialogueCanvas ()

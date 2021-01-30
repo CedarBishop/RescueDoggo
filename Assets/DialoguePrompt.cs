@@ -10,8 +10,6 @@ public class DialoguePrompt : Interactables
 
     private Rigidbody rb;
 
-    public Vector3 zoomAmount;
-
     private void Awake()
     {
         if (!GetComponent<Rigidbody>())
@@ -19,6 +17,14 @@ public class DialoguePrompt : Interactables
             rb = gameObject.AddComponent<Rigidbody>();
             rb.isKinematic = true;
         }
+    }
+
+    public override bool Interact()
+    {
+
+        dialogueAlert.SetActive(false);
+        UIManager.instance.ToggleDialogueCanvas(transform.position + Vector3.up * 3, "I can't read...");
+        return true;
     }
 
     public override void TriggerEnter()
@@ -31,11 +37,6 @@ public class DialoguePrompt : Interactables
     {
         base.TriggerExit();
         dialogueAlert.SetActive(false);
-    }
-
-    public void FocusObject(CinemachineVirtualCamera cvc)
-    {
-        cvc.LookAt = gameObject.transform;
-        cvc.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset -= zoomAmount;
+        UIManager.instance.DeactivateDialogueCanvas();
     }
 }
