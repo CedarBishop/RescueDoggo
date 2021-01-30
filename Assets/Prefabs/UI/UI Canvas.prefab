@@ -366,6 +366,7 @@ MonoBehaviour:
   MenuGame: {fileID: 6824845063711890611}
   MenuOptions: {fileID: 5781639600965200195}
   MenuPause: {fileID: 3250318260485935087}
+  dialogueCanvasPrefab: {fileID: 7271247657150817891, guid: f5c7a050961757345843a4c06544459a, type: 3}
 --- !u!1 &954187176407826902
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public Transform lightEndLocation;
     public float colorLerpSpeed;
     public Color[] lightColorsOverDay;
+    public Gradient colorGradient;
 
 
     public ParticleSystem snowParticle;
@@ -97,8 +98,8 @@ public class GameManager : MonoBehaviour
             if (lightColorIndex < lightColorsOverDay.Length - 1)
             {
                 lightColorIndex++;
-                
-                
+
+                IncreaseSnowAndWind();
             }
         }
         else
@@ -116,10 +117,10 @@ public class GameManager : MonoBehaviour
     void IncreaseSnowAndWind ()
     {
         if (snowParticle != null)
-            snowParticle.emissionRate += 20;
+            snowParticle.emissionRate += 10;
 
         if(windParticle != null)
-            windParticle.emissionRate += 4;
+            windParticle.emissionRate += 2;
     }
 
 

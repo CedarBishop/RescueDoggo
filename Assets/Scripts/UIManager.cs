@@ -18,6 +18,11 @@ public class UIManager : MonoBehaviour
     public GameObject MenuOptions;
     public GameObject MenuPause;
 
+    public DialogueCanvas dialogueCanvasPrefab;
+
+    private DialogueCanvas dialogueCanvas;
+
+
 
     void Awake()
     {
@@ -29,6 +34,11 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        dialogueCanvas = Instantiate(dialogueCanvasPrefab, transform.position, Quaternion.identity);
     }
 
     public void SetScore (int value)
@@ -132,6 +142,16 @@ public class UIManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void ActivateDialogueCanvas (Vector3 worldPosition, string textToDisplay)
+    {
+        dialogueCanvas.Activate(worldPosition, textToDisplay);
+    }
+
+    public void DeactivateDialogueCanvas ()
+    {
+        dialogueCanvas.Deactivate();
     }
 }
 
