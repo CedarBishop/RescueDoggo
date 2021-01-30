@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771959740630516013}
   - component: {fileID: 6810455083793291321}
+  - component: {fileID: 1254742525309715924}
   m_Layer: 0
   m_Name: Waypoint
   m_TagString: Untagged
@@ -43,4 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9aa592288b3c74a8523a4fcb1c1fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smellSpeed: 5
+  smellSpeed: 10
+  smellTrailPrefab: {fileID: 3403896048177115395, guid: 43c76808180a29e43ab8ee7f631cd0b8, type: 3}
+--- !u!135 &1254742525309715924
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2316807010327310867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}

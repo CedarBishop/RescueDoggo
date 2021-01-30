@@ -7,16 +7,15 @@ public class Waypoints : Interactables
     public float smellSpeed;
     private Transform nextWaypoint;
     private Color smellColor;
-    private TrailRenderer smellTrailPrefab;
+    public TrailRenderer smellTrailPrefab;
 
     private TrailRenderer currentSmellTrail;
     private bool activated;
 
-    public void Init (Transform waypoint, Color color, TrailRenderer trail)
+    public void Init (Transform waypoint, Color color)
     {
         nextWaypoint = waypoint;
         smellColor = color;
-        smellTrailPrefab = trail;
         activated = true;
     }
 
@@ -34,23 +33,28 @@ public class Waypoints : Interactables
 
         if (currentSmellTrail != null)
         {
-            Destroy(currentSmellTrail);
+            Destroy(currentSmellTrail.gameObject);
         }
 
-        currentSmellTrail = Instantiate(smellTrailPrefab, transform.position, Quaternion.identity);
-        currentSmellTrail.startColor = smellColor;
+
         StartCoroutine("CoSmellTrail");
         return true;
     }
 
     IEnumerator CoSmellTrail ()
     {
-        while (Vector3.Distance(currentSmellTrail.transform.position, nextWaypoint.position) > 1)
+        for (int i = 0; i < 5; i++)
         {
-            transform.Translate((nextWaypoint.position - transform.position).normalized * Time.deltaTime * smellSpeed);
-            yield return null;
+            currentSmellTrail = Instantiate(smellTrailPrefab, transform.position, Quaternion.identity);
+            currentSmellTrail.startColor = smellColor;
+            while (Vector3.Distance(currentSmellTrail.transform.position, nextWaypoint.position) > 0.1f)
+            {
+                currentSmellTrail.transform.Translate((nextWaypoint.position - transform.position).normalized * Time.deltaTime * smellSpeed);
+                yield return null;
+            }
+            Destroy(currentSmellTrail.gameObject);
         }
-        Destroy(currentSmellTrail);
+        
     }
 
 }

@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
             RescueeSpawnPosition location = spawnLocations[Random.Range(0, spawnLocations.Count)];
             spawnLocations.Remove(location);
             Rescuee rescuee = (Instantiate(rescueePrefab, location.transform.position, Quaternion.identity));
-            rescuee.spawnPosition = location;
+            rescuee.Init(location);
             rescuees.Add(rescuee);
         }
 
