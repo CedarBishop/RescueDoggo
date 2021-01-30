@@ -15,8 +15,17 @@ public class InteractionManager : MonoBehaviour
     {
         if (other.GetComponent<Interactables>())
         {
-            pc.interactableObjects.Add(other.transform);
-            other.GetComponent<Interactables>().TriggerEnter();
+            Interactables interactable = other.GetComponent<Interactables>();
+               
+            if (interactable.barkToInteract)
+            {
+                pc.barkableObjects.Add(other.transform);
+            }
+            else
+            {
+                pc.interactableObjects.Add(other.transform);
+            }
+            interactable.TriggerEnter();
             //Debug.Log("Added " + other.name + " to interactables");
         }
     }
@@ -25,8 +34,17 @@ public class InteractionManager : MonoBehaviour
     {
         if (other.GetComponent<Interactables>())
         {
-            pc.interactableObjects.Remove(other.transform);
-            other.GetComponent<Interactables>().TriggerExit();
+            Interactables interactable = other.GetComponent<Interactables>();
+            if (interactable.barkToInteract)
+            {
+                pc.barkableObjects.Remove(other.transform);
+            }
+            else
+            {
+                pc.interactableObjects.Remove(other.transform);
+            }
+            
+            interactable.TriggerExit();
             //Debug.Log("Removed " + other.name + " to interactables");
         }
     }

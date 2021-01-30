@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Interactables : MonoBehaviour
 {
+    public bool barkToInteract;
+
     Rigidbody rb;
     protected bool triggered;
 

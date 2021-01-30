@@ -108,4 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2aba4cb1d0d0c4479cf78b677fef178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barkToInteract: 1
   scoreAddedForRescue: 10
+  spawnPosition: {fileID: 0}

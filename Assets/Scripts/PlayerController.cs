@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     // Interact
     private BoxCollider interactionArea;
     [HideInInspector] public List<Transform> interactableObjects;
+    [HideInInspector] public List<Transform> barkableObjects;
 
     public LayerMask WorldLayerMask;
 
@@ -156,6 +157,20 @@ public class PlayerController : MonoBehaviour
     {
         psBark.Play();
         animator.SetTrigger("Bark");
+
+        Transform closestObject = null;
+        float distance = Mathf.Infinity;
+        foreach (Transform t in barkableObjects)
+        {
+            if (Vector3.Distance(transform.position, t.position) < distance)
+            {
+                closestObject = t;
+            }
+        }
+        if (closestObject != null)
+        {
+            closestObject.GetComponent<Interactables>().Interact();
+        }
     }
 
     void OnInteract()
