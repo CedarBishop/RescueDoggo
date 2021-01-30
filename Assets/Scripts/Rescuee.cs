@@ -7,6 +7,7 @@ public class Rescuee : Interactables
     public int scoreAddedForRescue;
     public RescueeSpawnPosition spawnPosition;
     bool hasBeenRescued;
+    private string rescueeName;
 
     public override bool Interact()
     {
@@ -17,15 +18,16 @@ public class Rescuee : Interactables
 
         hasBeenRescued = true;
         spawnPosition.Deactivate();
-        Debug.Log("RESCUED " + transform.name);
-        GameManager.instance.AddToScore(scoreAddedForRescue);
+        Debug.Log("RESCUED " + rescueeName);
+        GameManager.instance.RescuedPerson(scoreAddedForRescue, rescueeName);
         Destroy(gameObject,0.1f);
         return true;
     }
 
-    public void Init (RescueeSpawnPosition rescueeSpawnPosition)
+    public void Init (RescueeSpawnPosition rescueeSpawnPosition, string name)
     {
         spawnPosition = rescueeSpawnPosition;
+        rescueeName = name;
         spawnPosition.Activate();
     }
 }
