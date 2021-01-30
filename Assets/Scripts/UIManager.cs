@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum UIState {Main, Game, Pause, Options}
+public enum UIState {Main, Game, Pause, Options, PreGame, EndGame}
 
 public class UIManager : MonoBehaviour
 {
@@ -17,12 +17,12 @@ public class UIManager : MonoBehaviour
     public GameObject MenuGame;
     public GameObject MenuOptions;
     public GameObject MenuPause;
+    public GameObject MenuPreGame;
+    public GameObject MenuEndGame;
 
     public DialogueCanvas dialogueCanvasPrefab;
 
     private DialogueCanvas dialogueCanvas;
-
-
 
     void Awake()
     {
@@ -54,33 +54,48 @@ public class UIManager : MonoBehaviour
 
     public void ChangeMenu(UIState newMenu)
     {
+        MenuMain.SetActive(true);
+        MenuGame.SetActive(false);
+        MenuPause.SetActive(false);
+        MenuOptions.SetActive(false);
+        MenuPreGame.SetActive(false);
+        MenuEndGame.SetActive(false);
+
         switch (newMenu)
         {
             case UIState.Main:
                 MenuMain.SetActive(true);
-                MenuGame.SetActive(false);
-                MenuPause.SetActive(false);
-                MenuOptions.SetActive(false);
+                Time.timeScale = 0;
                 break;
+
             case UIState.Game:
-                MenuMain.SetActive(false);
                 MenuGame.SetActive(true);
-                MenuPause.SetActive(false);
-                MenuOptions.SetActive(false);
+                Time.timeScale = 1;
                 break;
 
             case UIState.Pause:
-                MenuMain.SetActive(false);
-                MenuGame.SetActive(false);
                 MenuPause.SetActive(true);
-                MenuOptions.SetActive(false);
-
+                Time.timeScale = 0;
                 break;
+
             case UIState.Options:
-                MenuMain.SetActive(false);
-                MenuGame.SetActive(false);
-                MenuPause.SetActive(false);
                 MenuOptions.SetActive(true);
+                Time.timeScale = 0;
+                break;
+
+            case UIState.PreGame:
+                MenuPreGame.SetActive(true);
+                Time.timeScale = 0;
+                break;
+
+            case UIState.EndGame:
+                MenuEndGame.SetActive(true);
+                ReportCard reportCard = MenuEndGame.GetComponent<ReportCard>();
+                reportCard.Initialise();
+                Time.timeScale = 0;
+                break;
+
+            default:
                 break;
         }
     }
@@ -96,22 +111,20 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("Pausing");
             ChangeMenu(UIState.Pause);
-            if (GetSceneName() != "Main")
-            {
-                Time.timeScale = 0;
-            }
+            //if (GetSceneName() != "Main")
+            //{
+            //    Time.timeScale = 0;
+            //}
         }
         else if (GetSceneName() == "Main")
         {
             Debug.Log("Returning to Main Menu");
             ChangeMenu(UIState.Main);
-            Time.timeScale = 0;
         }
         else
         {
             Debug.Log("Returning to Game");
             ChangeMenu(UIState.Game);
-            Time.timeScale = 1;
         }
     }
 
@@ -152,6 +165,11 @@ public class UIManager : MonoBehaviour
     public void DeactivateDialogueCanvas ()
     {
         dialogueCanvas.Deactivate();
+    }
+
+    public void RestartButton ()
+    {
+        GameManager.instance.RestartLevel();
     }
 }
 

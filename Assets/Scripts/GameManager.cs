@@ -77,10 +77,10 @@ public class GameManager : MonoBehaviour
     public void EndDay ()
     {
         dayIsUnderway = false;
-        RestartLevel();
+        UIManager.instance.ChangeMenu(UIState.EndGame);
     }
 
-    void RestartLevel ()
+    public void RestartLevel ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
