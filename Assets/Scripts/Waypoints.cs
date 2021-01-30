@@ -7,10 +7,10 @@ public class Waypoints : Interactables
     public float smellSpeed;
     private Transform nextWaypoint;
     public Footsteps footstepsPrefab;
-    private Color smellColor;
-    public TrailRenderer smellTrailPrefab;
+    private Gradient smellColor;
+    public SmellFX smellFXPrefab;
 
-    private TrailRenderer currentSmellTrail;
+    private SmellFX currentSmellFX;
     private bool activated;
 
     private float trailDistance;
@@ -18,7 +18,7 @@ public class Waypoints : Interactables
 
     private Footsteps footsteps;
 
-    public void Init (Transform waypoint, Color color)
+    public void Init (Transform waypoint, Gradient color)
     {
 
         collider = GetComponent<SphereCollider>();
@@ -49,9 +49,9 @@ public class Waypoints : Interactables
             return true;
         }
 
-        if (currentSmellTrail != null)
+        if (currentSmellFX != null)
         {
-            Destroy(currentSmellTrail.gameObject);
+            Destroy(currentSmellFX.gameObject);
         }
 
 
@@ -64,26 +64,26 @@ public class Waypoints : Interactables
         for (int i = 0; i < 2; i++)
         {
             PlayerController player = FindObjectOfType<PlayerController>();
-            currentSmellTrail = Instantiate(smellTrailPrefab, player.transform.position, Quaternion.identity);
-            currentSmellTrail.startColor = smellColor;
+            currentSmellFX = Instantiate(smellFXPrefab, player.transform.position, Quaternion.identity);
+            currentSmellFX.SetColor(smellColor);
             trailDistance = Mathf.Infinity;
-            float newTrailDistance = Vector3.Distance(currentSmellTrail.transform.position, nextWaypoint.position);
+            float newTrailDistance = Vector3.Distance(currentSmellFX.transform.position, nextWaypoint.position);
             
             // Because of the line wiggle, it checks whether the distance is getting greater before it destroys it. Doing it this way because the wiggle makes it miss most of the time.
             while (trailDistance - newTrailDistance >= 0)
             {
                 trailDistance = newTrailDistance;
-                newTrailDistance = Vector3.Distance(currentSmellTrail.transform.position, nextWaypoint.position);
+                newTrailDistance = Vector3.Distance(currentSmellFX.transform.position, nextWaypoint.position);
                 Debug.Log("NEW DIST: " + newTrailDistance + "\nOLD DIST: " + trailDistance);
-                currentSmellTrail.transform.Translate((nextWaypoint.position - player.transform.position).normalized * Time.deltaTime * smellSpeed);
+                currentSmellFX.transform.Translate((nextWaypoint.position - player.transform.position).normalized * Time.deltaTime * smellSpeed);
                 yield return null;
             }
 
-            ParticleSystem ps = currentSmellTrail.GetComponentInChildren<ParticleSystem>();
-            Destroy(ps, 5);
-            ps.transform.parent = null;
+            //ParticleSystem ps = currentSmellFX.GetComponentInChildren<ParticleSystem>();
+            //Destroy(ps, 5);
+            //ps.transform.parent = null;
 
-            Destroy(currentSmellTrail.gameObject);
+            Destroy(currentSmellFX.gameObject);
             Debug.Log("Destroyed Trail");
         }
         

@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     public Color[] lightColorsOverDay;
     public Gradient colorGradient;
 
-
     public ParticleSystem snowParticle;
     public ParticleSystem windParticle;
 

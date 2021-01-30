@@ -6,7 +6,7 @@ public class RescueeSpawnPosition : MonoBehaviour
 {
     public Waypoints[] pathway;
 
-    public Color smellColor;
+    public Gradient smellColor;
 
     public void Activate()
     {
