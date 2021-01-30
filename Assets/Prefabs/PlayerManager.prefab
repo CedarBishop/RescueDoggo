@@ -56,9 +56,9 @@ MonoBehaviour:
   zoomSpeed: 0.001
   mainCamLookDistance: 5
   mainCamLookTarget: {fileID: 0}
-  speed: 4
+  speed: 8
   cc: {fileID: 0}
-  jumpHeight: 0.2
+  jumpHeight: 0.25
   gravityMultiplier: 2
   groundCheckPosition: {fileID: 5533990721989001033}
   groundCheckRadius: 0.5
