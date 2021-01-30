@@ -106,10 +106,10 @@ MonoBehaviour:
   mainCamLookTarget: {fileID: 0}
   speed: 4
   cc: {fileID: 0}
-  jumpHeight: 200
+  jumpHeight: 0.2
   gravityMultiplier: 2
   groundCheckPosition: {fileID: 5533990721989001033}
-  groundCheckRadius: 0
+  groundCheckRadius: 0.5
   interactableObjects: []
   WorldLayerMask:
     serializedVersion: 2
@@ -285,7 +285,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557041630498149734}
-  m_LocalRotation: {x: 0.40455356, y: 0.000000052567554, z: -0.000000023254302, w: 0.9145143}
+  m_LocalRotation: {x: 0.4045536, y: 0.000000033921115, z: -0.000000015005678, w: 0.9145143}
   m_LocalPosition: {x: 0, y: 15.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -446,7 +446,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557041631044376338}
-  m_LocalRotation: {x: 0.40455356, y: 0.000000052567554, z: -0.000000023254302, w: 0.9145143}
+  m_LocalRotation: {x: 0.4045536, y: 0.000000033921115, z: -0.000000015005678, w: 0.9145143}
   m_LocalPosition: {x: 0, y: 15.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

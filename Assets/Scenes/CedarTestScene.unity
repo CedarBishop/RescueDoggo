@@ -918,6 +918,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 557041628914471722, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
+      propertyPath: groundCheckRadius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 557041628914471724, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_Enabled
       value: 0

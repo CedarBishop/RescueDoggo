@@ -59,8 +59,9 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheckPosition.position, groundCheckRadius, WorldLayerMask);
+        UpdateYVelocity();
 
-         Movement();
+        Movement();
 
         // Whilst in runtime, allow rotation. You can rotate doggo paused otherwise
         if (Time.timeScale != 0)
@@ -71,12 +72,12 @@ public class PlayerController : MonoBehaviour
 
     void UpdateYVelocity()
     {
-        if (isGrounded && yVelocity < 0)
+        if (isGrounded && yVelocity <= 0)
         {
             yVelocity = -2f;
         }
 
-        yVelocity += (Physics.gravity.y * gravityMultiplier) * Time.deltaTime;
+        yVelocity += (-9.81f * gravityMultiplier) * Time.deltaTime;
     }
 
     void OnMove(InputValue value)
@@ -143,6 +144,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded)
         {
+        print("OnJump");
             yVelocity = (jumpHeight * -2 * (Physics.gravity.y * gravityMultiplier));
         }
     }
