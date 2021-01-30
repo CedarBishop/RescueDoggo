@@ -40,6 +40,10 @@ public class Spawner : MonoBehaviour
             }
         }
 
+        if (amountOfRescueesToSpawn > spawnLocations.Count)
+        {
+            amountOfRescueesToSpawn = spawnLocations.Count;
+        }
 
         for (int i = 0; i < amountOfRescueesToSpawn; i++)
         {
