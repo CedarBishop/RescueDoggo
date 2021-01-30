@@ -107,14 +107,31 @@ public class UIManager : MonoBehaviour
 
     public void ToggleOptions()
     {
-        if (!MenuOptions.activeSelf)
+        if (MenuOptions.activeSelf)
         {
-            ChangeMenu(UIState.Options);
+            if (GetSceneName() != "Main")
+            {
+                ChangeMenu(UIState.Pause);
+            }
+            else
+            {
+                ChangeMenu(UIState.Main);
+            }
         }
         else
         {
-            ChangeMenu(UIState.Pause);
+            ChangeMenu(UIState.Options);
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
 
