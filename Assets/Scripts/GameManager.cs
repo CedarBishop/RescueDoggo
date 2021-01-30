@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public ParticleSystem snowParticle;
     public ParticleSystem windParticle;
 
+    public List<string> rescuedPersonNames;
+
     private float timer;
     private int lightColorIndex;
 
@@ -64,6 +66,7 @@ public class GameManager : MonoBehaviour
     public void StartDay ()
     {
         timer = secondsInDay;
+        rescuedPersonNames = new List<string>();
         print("Start Day");
         spawner.OnStartDay();
         dayIsUnderway = true;
@@ -77,10 +80,10 @@ public class GameManager : MonoBehaviour
     public void EndDay ()
     {
         dayIsUnderway = false;
-        RestartLevel();
+        UIManager.instance.ChangeMenu(UIState.EndGame);
     }
 
-    void RestartLevel ()
+    public void RestartLevel ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -107,9 +110,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddToScore (int scoreAdded)
+    public void RescuedPerson (int scoreAdded, string rescueeName)
     {
         score += scoreAdded;
+        rescuedPersonNames.Add(rescueeName);
         UIManager.instance.SetScore(score);
     }
 

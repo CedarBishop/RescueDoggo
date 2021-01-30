@@ -9,6 +9,8 @@ public class Waypoints : Interactables
     public Footsteps footstepsPrefab;
     private Gradient smellColor;
     public SmellFX smellFXPrefab;
+    public ParticleSystem meshGlow;
+    public GameObject[] meshes;
 
     private SmellFX currentSmellFX;
     private bool activated;
@@ -25,6 +27,15 @@ public class Waypoints : Interactables
         nextWaypoint = waypoint;
         smellColor = color;
         activated = true;
+
+        GameObject go = Instantiate(meshes[Random.Range(0,meshes.Length)], transform.position, Quaternion.identity);
+        go.transform.parent = transform;
+        ParticleSystem glow = Instantiate(meshGlow, transform.position, Quaternion.identity);
+        Color extractedColor = color.colorKeys[0].color;
+        glow.startColor = new Color(extractedColor.r, extractedColor.g, extractedColor.b, 0.05f);
+        glow.transform.parent = transform;
+        glow.Play();
+
 
         if (Random.Range(0,2) == 0)
         {
@@ -74,13 +85,11 @@ public class Waypoints : Interactables
             {
                 trailDistance = newTrailDistance;
                 newTrailDistance = Vector3.Distance(currentSmellFX.transform.position, nextWaypoint.position);
+                //currentSmellFX.transform.forward = (nextWaypoint.position - player.transform.position).normalized;
                 currentSmellFX.transform.Translate((nextWaypoint.position - player.transform.position).normalized * Time.deltaTime * smellSpeed);
                 yield return null;
             }
 
-            //ParticleSystem ps = currentSmellFX.GetComponentInChildren<ParticleSystem>();
-            //Destroy(ps, 5);
-            //ps.transform.parent = null;
 
             Destroy(currentSmellFX.gameObject);
             Debug.Log("Destroyed Trail");

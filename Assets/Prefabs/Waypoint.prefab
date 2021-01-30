@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 771959740630516013}
   - component: {fileID: 6810455083793291321}
   - component: {fileID: 1254742525309715924}
-  - component: {fileID: 6659386562131760122}
-  - component: {fileID: 8722005157789765525}
   m_Layer: 0
   m_Name: Waypoint
   m_TagString: Untagged
@@ -49,6 +47,13 @@ MonoBehaviour:
   smellSpeed: 6
   footstepsPrefab: {fileID: 2607187098892703551, guid: bc2bfd55ad86da84b90087c3aaa4e34e, type: 3}
   smellFXPrefab: {fileID: 6780404328772822375, guid: 32f259259450fb74190584d60e424f2b, type: 3}
+  meshGlow: {fileID: 7129567414239770151, guid: 155ba4db3e87c8a42ac3764b14723d9f, type: 3}
+  meshes:
+  - {fileID: 8817420064938496483, guid: f2fc7d94ba421bd4fa4de48efc1bc0f4, type: 3}
+  - {fileID: 2674594026298530906, guid: 8daa17cfb3569f04ea4652ed49ee8420, type: 3}
+  - {fileID: 3332036688568600301, guid: 89c37918f0a64154185c040878eb3518, type: 3}
+  - {fileID: 3671088195722877939, guid: a88cc757ab17f174f93d5c56744e3208, type: 3}
+  - {fileID: 8544936723929738045, guid: c7b9957f860f79d42baafd2d4ddcbee7, type: 3}
 --- !u!135 &1254742525309715924
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -62,52 +67,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &6659386562131760122
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2316807010327310867}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8722005157789765525
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2316807010327310867}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 594d7c8d8bb9c76419245bbfda12b557, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}

@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Spawner : MonoBehaviour
 {
+    public RescueeNames rescueeNames;
     public Rescuee rescueePrefab;
     public RescueeSpawnPosition[] rescueeSpawnLocations;
     public int amountOfRescueesToSpawn;
@@ -59,10 +59,17 @@ public class Spawner : MonoBehaviour
             
             spawnLocations.Remove(location);
             Rescuee rescuee = (Instantiate(rescueePrefab, location.transform.position, Quaternion.identity));
-            rescuee.Init(location);
+
+            rescuee.Init(location, rescueeNames.names[Random.Range(0,rescueeNames.names.Length)]);
             rescuees.Add(rescuee);
         }
 
+    }
+
+    [System.Serializable]
+    public class RescueeNames
+    {
+        public string[] names;
     }
 }
 
