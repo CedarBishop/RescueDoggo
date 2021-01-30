@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum UIState {Main, Game, Pause, Options}
 
@@ -12,10 +13,10 @@ public class UIManager : MonoBehaviour
     public Text scoreText;
     public Image timeOfDayFillImage;
 
-    [SerializeField] private GameObject MenuMain;
-    [SerializeField] private GameObject MenuGame;
-    [SerializeField] private GameObject MenuPause;
-    [SerializeField] private GameObject MenuOptions;
+    public GameObject MenuMain;
+    public GameObject MenuGame;
+    public GameObject MenuOptions;
+    public GameObject MenuPause;
 
 
     void Awake()
@@ -74,5 +75,46 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public string GetSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
 
+    public void TogglePause()
+    {
+        if (!MenuPause.activeSelf)
+        {
+            Debug.Log("Pausing");
+            ChangeMenu(UIState.Pause);
+            if (GetSceneName() != "Main")
+            {
+                Time.timeScale = 0;
+            }
+        }
+        else if (GetSceneName() == "Main")
+        {
+            Debug.Log("Returning to Main Menu");
+            ChangeMenu(UIState.Main);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Debug.Log("Returning to Game");
+            ChangeMenu(UIState.Game);
+            Time.timeScale = 1;
+        }
+    }
+
+    public void ToggleOptions()
+    {
+        if (!MenuOptions.activeSelf)
+        {
+            ChangeMenu(UIState.Options);
+        }
+        else
+        {
+            ChangeMenu(UIState.Pause);
+        }
+    }
 }
+

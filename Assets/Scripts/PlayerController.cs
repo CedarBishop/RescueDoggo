@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask WorldLayerMask;
 
     private PlayerInput playerInput;
+    private UIManager uiManager;
 
     [SerializeField] private ParticleSystem psBark;
 
@@ -38,7 +39,6 @@ public class PlayerController : MonoBehaviour
     {
         mainCam = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
         mainCam.Follow = transform;
-        //rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
         interactionArea = GetComponentInChildren<BoxCollider>();
     }
@@ -46,13 +46,19 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        uiManager = FindObjectOfType<UIManager>();
 
     }
 
     private void Update()
     {
-        Movement();
-        RotateTowardsDirection();
+            Movement();
+
+        // Whilst in runtime, allow rotation. You can rotate doggo paused otherwise
+        if (Time.timeScale != 0)
+        {
+            RotateTowardsDirection();
+        }
     }
 
     private void FixedUpdate()
@@ -117,5 +123,10 @@ public class PlayerController : MonoBehaviour
     void OnJump()
     {
         cc.Move(Vector3.up * jumpHeight * Time.deltaTime);
+    }
+
+    void OnPause()
+    {
+        uiManager.TogglePause();
     }
 }
