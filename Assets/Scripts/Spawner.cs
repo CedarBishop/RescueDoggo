@@ -6,17 +6,27 @@ using UnityEngine.AI;
 public class Spawner : MonoBehaviour
 {
     public Rescuee rescueePrefab;
-    public Transform[] rescueeSpawnLocations;
+    public RescueeSpawnPosition[] rescueeSpawnLocations;
     public int amountOfRescueesToSpawn;
 
-    public void OnStartDay ()
+
+    public List<Rescuee> rescuees;
+
+    public void OnStartDay()
     {
+        SpawnRescuees();
+    }
+
+    void SpawnRescuees()
+    {
+        rescuees = new List<Rescuee>();
         if (rescueeSpawnLocations == null)
         {
             return;
         }
+        rescuees.Clear();
 
-        List<Transform> spawnLocations = new List<Transform>();
+        List<RescueeSpawnPosition> spawnLocations = new List<RescueeSpawnPosition>();
 
         for (int i = 0; i < rescueeSpawnLocations.Length; i++)
         {
@@ -26,10 +36,13 @@ public class Spawner : MonoBehaviour
 
         for (int i = 0; i < amountOfRescueesToSpawn; i++)
         {
-            Transform location = spawnLocations[Random.Range(0, spawnLocations.Count)];
+            RescueeSpawnPosition location = spawnLocations[Random.Range(0, spawnLocations.Count)];
             spawnLocations.Remove(location);
-            Instantiate(rescueePrefab, location.position, Quaternion.identity);
+            Rescuee rescuee = (Instantiate(rescueePrefab, location.transform.position, Quaternion.identity));
+            rescuee.spawnPosition = location;
+            rescuees.Add(rescuee);
         }
 
     }
 }
+

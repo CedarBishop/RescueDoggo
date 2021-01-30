@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+
 public class Interactables : MonoBehaviour
 {
     Rigidbody rb;
@@ -12,9 +12,9 @@ public class Interactables : MonoBehaviour
         return true;
     }
 
-    private void Awake()
+    private void Start()
     {
-        rb.GetComponent<Rigidbody>();
+        rb = gameObject.AddComponent<Rigidbody>();
         rb.isKinematic = true;
     }
 }

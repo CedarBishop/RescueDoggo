@@ -167,8 +167,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rescueePrefab: {fileID: 2442491696607122063, guid: 52a9420c47652024da235d1ccf1a529d, type: 3}
+  waypointPrefab: {fileID: 6810455083793291321, guid: 54809b2ed65a7204a97355cd06ed2578, type: 3}
   rescueeSpawnLocations: []
   amountOfRescueesToSpawn: 3
+  waypointsRowsAndColumns: {x: 10, y: 10}
+  distanceBetweenWaypoints: 10
+  waypoints: []
 --- !u!1 &2169687587654718459
 GameObject:
   m_ObjectHideFlags: 0
