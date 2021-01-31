@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     public GameObject MenuPreGame;
     public GameObject MenuEndGame;
 
+    public Animator preGameAnimator;
+
     public DialogueCanvas dialogueCanvasPrefab;
 
     private DialogueCanvas dialogueCanvas;
@@ -91,7 +93,7 @@ public class UIManager : MonoBehaviour
 
             case UIState.PreGame:
                 MenuPreGame.SetActive(true);
-                Time.timeScale = 0;
+                Time.timeScale = 1;
                 break;
 
             case UIState.EndGame:
@@ -190,6 +192,11 @@ public class UIManager : MonoBehaviour
     public void OnSFXSliderChanged ()
     {
         //FMODUnity.Settings.Instance.
+    }
+
+    public void ClosePreGame()
+    {
+        preGameAnimator.SetBool("ExitTransition", true);
     }
 }
 

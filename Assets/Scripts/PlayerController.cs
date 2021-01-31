@@ -288,7 +288,14 @@ public class PlayerController : MonoBehaviour
     void OnAnyKey()
     {
         // Exit Animation
-        GameObject.FindGameObjectWithTag("Tutorial").GetComponent<Animator>().SetBool("ExitTransition", true);
+        UIManager.instance.ClosePreGame();
+        StartCoroutine("CoClosePreGame");
 
+    }
+
+    IEnumerator CoClosePreGame ()
+    {
+        yield return new WaitForSeconds(1.5f);
+        GameManager.instance.StartDay();
     }
 }

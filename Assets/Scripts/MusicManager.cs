@@ -67,7 +67,7 @@ public class MusicManager : MonoBehaviour
 
     public void SetMusicVolume (float value)
     {
-        audioSource.volume = value;
+        audioSource.volume = value / 2;
     }
 
     public void SetSFXVolume (float value)
@@ -77,7 +77,7 @@ public class MusicManager : MonoBehaviour
 
     public float GetMusicVolume()
     {
-        return audioSource.volume;
+        return audioSource.volume * 2;
     }
 
     IEnumerator CoMenuMusic ()

@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
     {
         UIManager.instance.ChangeMenu(UIState.PreGame);
         MusicManager.instance.PlayChillGameMusic();
-        StartDay();
     }
 
     private void Update()
@@ -76,6 +75,11 @@ public class GameManager : MonoBehaviour
 
     public void StartDay ()
     {
+        if (dayIsUnderway)
+        {
+            return;
+        }
+
         timer = secondsInDay;
         rescuedPersonNames = new List<string>();
         print("Start Day");

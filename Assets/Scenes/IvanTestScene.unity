@@ -3950,6 +3950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Mesh_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214286066221176721, guid: e9223b3e5d144f34e9508f3d288e0f38, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1986599889599040811, guid: e9223b3e5d144f34e9508f3d288e0f38, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -6217,11 +6221,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 557041630498149737, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1e-45
+      value: -3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 557041630498149737, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 557041631044376340, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6245,11 +6249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 557041631044376340, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1e-45
+      value: -3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 557041631044376340, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 3398251537777204895, guid: afec9e3240f2846468c1d958d505a6f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16271,6 +16275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Mesh_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7625007605055398138, guid: 7ea9e8aa60b801444b77afeb9995c7fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ea9e8aa60b801444b77afeb9995c7fe, type: 3}
 --- !u!114 &1827240760 stripped
@@ -19447,6 +19455,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Mesh_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5678446192299880368, guid: abcb437e57310ad4a8f732ec27fe2f58, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abcb437e57310ad4a8f732ec27fe2f58, type: 3}
 --- !u!1001 &3177989417499618078
@@ -19528,6 +19540,10 @@ PrefabInstance:
     - target: {fileID: 1214286066221176721, guid: e9223b3e5d144f34e9508f3d288e0f38, type: 3}
       propertyPath: m_Name
       value: Fence_Mesh_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214286066221176721, guid: e9223b3e5d144f34e9508f3d288e0f38, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1986599889599040811, guid: e9223b3e5d144f34e9508f3d288e0f38, type: 3}
       propertyPath: m_RootOrder
@@ -19653,6 +19669,10 @@ PrefabInstance:
     - target: {fileID: 4508610845982158433, guid: 5f7fb13286b5550479b8aea35d4b9925, type: 3}
       propertyPath: m_Name
       value: Fence_Mesh_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508610845982158433, guid: 5f7fb13286b5550479b8aea35d4b9925, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f7fb13286b5550479b8aea35d4b9925, type: 3}
@@ -19806,9 +19826,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1448451452719182559, guid: f749dd27643056746b48518b04184220, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300224072513552203, guid: f749dd27643056746b48518b04184220, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6075624088287053179, guid: f749dd27643056746b48518b04184220, type: 3}
       propertyPath: m_Name
       value: StartCabin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075624088287053179, guid: f749dd27643056746b48518b04184220, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6853110048132456385, guid: f749dd27643056746b48518b04184220, type: 3}
       propertyPath: m_RootOrder
@@ -19934,6 +19966,10 @@ PrefabInstance:
     - target: {fileID: 7625007605055398138, guid: 7ea9e8aa60b801444b77afeb9995c7fe, type: 3}
       propertyPath: m_Name
       value: Fence_Mesh_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625007605055398138, guid: 7ea9e8aa60b801444b77afeb9995c7fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ea9e8aa60b801444b77afeb9995c7fe, type: 3}
