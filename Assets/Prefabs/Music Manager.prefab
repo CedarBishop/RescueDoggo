@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45effc96f19d43b42a2007cfbf812d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuIntroClip: {fileID: 8300000, guid: dc3187b199d6a6049961432ec00f02e4, type: 3}
   menuClip: {fileID: 8300000, guid: 52cd7c5bbbdde4b479da08908b41017c, type: 3}
   gameClip: {fileID: 8300000, guid: 59e7667be3690cb49976bd76699e22b6, type: 3}
-  dramaticGameClip: {fileID: 8300000, guid: 389d7e79b256ca5449e90751e149db6b, type: 3}
+  dramaticGameClip: {fileID: 8300000, guid: 11106c4563d927d488a955c949b34ef1, type: 3}
 --- !u!82 &8491842499803686467
 AudioSource:
   m_ObjectHideFlags: 0

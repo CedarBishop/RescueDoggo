@@ -7,14 +7,14 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance = null;
 
-    public float crossFadeSpeed;
-
+    public AudioClip menuIntroClip;
     public AudioClip menuClip;
     public AudioClip gameClip;
     public AudioClip dramaticGameClip;
 
     private AudioSource audioSource;
 
+    private float introDelay;
 
     private void Awake()
     {
@@ -43,19 +43,25 @@ public class MusicManager : MonoBehaviour
 
     public void PlayMenuMusic()
     {
-        audioSource.clip = menuClip;
-        audioSource.Play();
+        introDelay = menuIntroClip.length;
+        StartCoroutine("CoMenuMusic");
     }
 
     public void PlayChillGameMusic ()
     {
+        StopCoroutine("CoMenuMusic");
+
         audioSource.clip = gameClip;
+        audioSource.loop = true;
         audioSource.Play();
     }
 
     public void PlayDramaticGameMusic()
     {
+        StopCoroutine("CoMenuMusic");
+
         audioSource.clip = dramaticGameClip;
+        audioSource.loop = true;
         audioSource.Play();
     }
 
@@ -72,5 +78,18 @@ public class MusicManager : MonoBehaviour
     public float GetMusicVolume()
     {
         return audioSource.volume;
+    }
+
+    IEnumerator CoMenuMusic ()
+    {
+        audioSource.loop = false;
+        audioSource.clip = menuIntroClip;
+        audioSource.Play();
+
+        yield return new WaitForSeconds(introDelay);
+
+        audioSource.clip = menuClip;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 }

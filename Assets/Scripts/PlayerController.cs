@@ -187,6 +187,10 @@ public class PlayerController : MonoBehaviour
         float distance = Mathf.Infinity;
         foreach (Transform t in barkableObjects)
         {
+            if (t == null)
+            {
+                continue;
+            }
             if (Vector3.Distance(transform.position, t.position) < distance)
             {
                 closestObject = t;
@@ -206,6 +210,10 @@ public class PlayerController : MonoBehaviour
         {
             foreach (Waypoints waypoint in FindObjectsOfType<Waypoints>())
             {
+                if (waypoint == null)
+                {
+                    continue;
+                }
                 if (Vector3.Distance(transform.position, waypoint.transform.position) < distance)
                 {
                     closestObject = waypoint.transform;
@@ -232,6 +240,10 @@ public class PlayerController : MonoBehaviour
         {
             foreach (Transform t in interactableObjects)
             {
+                if (t == null)
+                {
+                    continue;
+                }
                 if (Vector3.Distance(transform.position, t.position) < distance)
                 {
                     closestObject = t;
