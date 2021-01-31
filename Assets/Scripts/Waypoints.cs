@@ -92,7 +92,7 @@ public class Waypoints : Interactables
 
 
             Destroy(currentSmellFX.gameObject);
-            Debug.Log("Destroyed Trail");
+            //Debug.Log("Destroyed Trail");
         }
         
     }
