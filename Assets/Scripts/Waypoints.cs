@@ -11,7 +11,6 @@ public class Waypoints : Interactables
     public SmellFX smellFXPrefab;
     public ParticleSystem meshGlow;
 
-    private SmellFX currentSmellFX;
     private bool activated;
 
     private float trailDistance;
@@ -59,12 +58,6 @@ public class Waypoints : Interactables
             return true;
         }
 
-        if (currentSmellFX != null)
-        {
-            Destroy(currentSmellFX.gameObject);
-        }
-
-
         StartCoroutine("CoSmellTrail");
         return true;
     }
@@ -74,7 +67,7 @@ public class Waypoints : Interactables
         for (int i = 0; i < 1; i++)
         {
             PlayerController player = FindObjectOfType<PlayerController>();
-            currentSmellFX = Instantiate(smellFXPrefab, player.transform.position, Quaternion.identity);
+            SmellFX currentSmellFX = Instantiate(smellFXPrefab, player.transform.position, Quaternion.identity);
             currentSmellFX.SetColor(smellColor);
             trailDistance = Mathf.Infinity;
             float newTrailDistance = Vector3.Distance(currentSmellFX.transform.position, nextWaypoint.position);
@@ -84,16 +77,13 @@ public class Waypoints : Interactables
             {
                 trailDistance = newTrailDistance;
                 newTrailDistance = Vector3.Distance(currentSmellFX.transform.position, nextWaypoint.position);
-                //currentSmellFX.transform.forward = (nextWaypoint.position - player.transform.position).normalized;
                 currentSmellFX.transform.Translate((nextWaypoint.position - player.transform.position).normalized * Time.deltaTime * smellSpeed);
                 yield return null;
             }
 
 
             Destroy(currentSmellFX.gameObject);
-            Debug.Log("Destroyed Trail");
-
-           
+            Debug.Log("Destroyed Trail");           
         }
 
         if (nextWaypoint.GetComponent<Waypoints>())
@@ -105,18 +95,13 @@ public class Waypoints : Interactables
 
     public void SmellTrailChain ()
     {
-        if (currentSmellFX != null)
-        {
-            Destroy(currentSmellFX.gameObject);
-        }
-
         StartCoroutine("CoSmellTrailChain");
     }
 
     IEnumerator CoSmellTrailChain()
     {
         PlayerController player = FindObjectOfType<PlayerController>();
-        currentSmellFX = Instantiate(smellFXPrefab, transform.position + Vector3.up, Quaternion.identity); ;
+        SmellFX currentSmellFX = Instantiate(smellFXPrefab, transform.position + Vector3.up, Quaternion.identity);
         currentSmellFX.SetColor(smellColor);
         trailDistance = Mathf.Infinity;
         float newTrailDistance = Vector3.Distance(currentSmellFX.transform.position, nextWaypoint.position);
@@ -131,11 +116,7 @@ public class Waypoints : Interactables
             yield return null;
         }
 
-
         Destroy(currentSmellFX.gameObject);
-
-       
-
     }
 
 }
