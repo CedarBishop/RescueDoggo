@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         uiManager = FindObjectOfType<UIManager>();
-
     }
 
     private void Update()
@@ -203,27 +202,55 @@ public class PlayerController : MonoBehaviour
     {
         Transform closestObject = null;
         float distance = Mathf.Infinity;
-        foreach(Transform t in interactableObjects)
+        if (interactableObjects == null || interactableObjects.Count == 0)
         {
-            if (Vector3.Distance(transform.position, t.position) < distance)
+            foreach (Waypoints waypoint in FindObjectsOfType<Waypoints>())
             {
-                closestObject = t;
-            }
-        }
-        if (closestObject != null)
-        {
-            closestObject.GetComponent<Interactables>().Interact();
-            if (closestObject.GetComponent<DialoguePrompt>())
-            {
-                //mainCam.LookAt
-                // Zoom camera to look at object
-                transitionCamera = !transitionCamera;
-                if (transitionCamera == false)
+                if (Vector3.Distance(transform.position, waypoint.transform.position) < distance)
                 {
-                    closestObject.GetComponent<DialoguePrompt>().dialogueAlert.SetActive(true);
+                    closestObject = waypoint.transform;
+                }
+            }
+            if (closestObject != null)
+            {
+                closestObject.GetComponent<Interactables>().Interact();
+                if (closestObject.GetComponent<DialoguePrompt>())
+                {
+                    //mainCam.LookAt
+                    // Zoom camera to look at object
+                    transitionCamera = !transitionCamera;
+                    if (transitionCamera == false)
+                    {
+                        closestObject.GetComponent<DialoguePrompt>().dialogueAlert.SetActive(true);
+                    }
                 }
             }
         }
+        else
+        {
+            foreach (Transform t in interactableObjects)
+            {
+                if (Vector3.Distance(transform.position, t.position) < distance)
+                {
+                    closestObject = t;
+                }
+            }
+            if (closestObject != null)
+            {
+                closestObject.GetComponent<Interactables>().Interact();
+                if (closestObject.GetComponent<DialoguePrompt>())
+                {
+                    //mainCam.LookAt
+                    // Zoom camera to look at object
+                    transitionCamera = !transitionCamera;
+                    if (transitionCamera == false)
+                    {
+                        closestObject.GetComponent<DialoguePrompt>().dialogueAlert.SetActive(true);
+                    }
+                }
+            }
+        }
+       
     }
 
     void OnJump()
