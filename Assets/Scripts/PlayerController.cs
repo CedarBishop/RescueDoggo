@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
 
         if (movementValue != Vector2.zero)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.05F);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.15F);
         }
 
         RaycastHit hit;
@@ -284,5 +284,11 @@ public class PlayerController : MonoBehaviour
     void OnPause()
     {
         uiManager.TogglePause();
+    }
+    void OnAnyKey()
+    {
+        // Exit Animation
+        GameObject.FindGameObjectWithTag("Tutorial").GetComponent<Animator>().SetBool("ExitTransition", true);
+
     }
 }
