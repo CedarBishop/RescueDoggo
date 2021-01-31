@@ -19,8 +19,9 @@ public class Interactables : MonoBehaviour
     {
         if (!GetComponent<Rigidbody>())
         {
-            rb = gameObject.AddComponent<Rigidbody>();
+            gameObject.AddComponent<Rigidbody>();
         }
+        rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
     }
 

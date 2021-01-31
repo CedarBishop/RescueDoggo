@@ -32,6 +32,6 @@ public class CameraFade : MonoBehaviour
             curtains.color = c;
         }
 
-        Debug.Log("Curtain Alpha: " + curtainAlpha);
+        //Debug.Log("Curtain Alpha: " + curtainAlpha);
     }
 }
