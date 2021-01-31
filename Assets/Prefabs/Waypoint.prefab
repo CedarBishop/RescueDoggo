@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 771959740630516013}
   - component: {fileID: 6810455083793291321}
   - component: {fileID: 1254742525309715924}
+  - component: {fileID: 1955446163566738703}
   m_Layer: 0
   m_Name: Waypoint
   m_TagString: Untagged
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9aa592288b3c74a8523a4fcb1c1fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barkToInteract: 0
   smellSpeed: 6
   footstepsPrefab: {fileID: 2607187098892703551, guid: bc2bfd55ad86da84b90087c3aaa4e34e, type: 3}
   smellFXPrefab: {fileID: 6780404328772822375, guid: 32f259259450fb74190584d60e424f2b, type: 3}
@@ -67,3 +69,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1955446163566738703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2316807010327310867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb005d989261674eb14f3c7e454884e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0, b: 0, a: 1}
+  radius: 0.8
