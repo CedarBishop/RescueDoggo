@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        UIManager.instance.ChangeMenu(UIState.PreGame);
         MusicManager.instance.PlayChillGameMusic();
         StartDay();
     }
