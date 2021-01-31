@@ -182,6 +182,7 @@ public class PlayerController : MonoBehaviour
     {
         psBark.Play();
         animator.SetTrigger("Bark");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Dog/bark", GetComponent<Transform>().position);
 
         Transform closestObject = null;
         float distance = Mathf.Infinity;
