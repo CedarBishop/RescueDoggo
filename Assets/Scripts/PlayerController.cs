@@ -187,6 +187,10 @@ public class PlayerController : MonoBehaviour
         float distance = Mathf.Infinity;
         foreach (Transform t in barkableObjects)
         {
+            if (t == null)
+            {
+                continue;
+            }
             if (Vector3.Distance(transform.position, t.position) < distance)
             {
                 closestObject = t;
@@ -206,14 +210,20 @@ public class PlayerController : MonoBehaviour
         {
             foreach (Waypoints waypoint in FindObjectsOfType<Waypoints>())
             {
+                if (waypoint == null)
+                {
+                    continue;
+                }
                 if (Vector3.Distance(transform.position, waypoint.transform.position) < distance)
                 {
                     closestObject = waypoint.transform;
                 }
             }
+
             if (closestObject != null)
             {
                 closestObject.GetComponent<Interactables>().Interact();
+                animator.SetTrigger("Sniff");
                 if (closestObject.GetComponent<DialoguePrompt>())
                 {
                     //mainCam.LookAt
@@ -230,6 +240,10 @@ public class PlayerController : MonoBehaviour
         {
             foreach (Transform t in interactableObjects)
             {
+                if (t == null)
+                {
+                    continue;
+                }
                 if (Vector3.Distance(transform.position, t.position) < distance)
                 {
                     closestObject = t;
@@ -237,6 +251,10 @@ public class PlayerController : MonoBehaviour
             }
             if (closestObject != null)
             {
+                if (closestObject.GetComponent<Waypoints>())
+                {
+                    animator.SetTrigger("Sniff");
+                }
                 closestObject.GetComponent<Interactables>().Interact();
                 if (closestObject.GetComponent<DialoguePrompt>())
                 {

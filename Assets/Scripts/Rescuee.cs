@@ -59,7 +59,7 @@ public class Rescuee : Interactables
 
         // Fade screen to Transparent...
         yield return new WaitForSeconds(camFade.fadeTime);  // Wait for Fade to Black to finish
-        Destroy(gameObject, 2.01f);
+        Destroy(gameObject, 2.5f);
         yield return new WaitForSeconds(2);  // Wait on back for a bit
         camFade.curtainAlpha = 1;
         camFade.fade = false;   // Set fade to clear to start

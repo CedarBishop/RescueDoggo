@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        MusicManager.instance.PlayChillGameMusic();
         StartDay();
     }
 
@@ -93,6 +94,7 @@ public class GameManager : MonoBehaviour
     {
         dayIsUnderway = false;
         UIManager.instance.ChangeMenu(UIState.EndGame);
+        MusicManager.instance.PlayChillGameMusic();
     }
 
     public void RestartLevel ()
@@ -112,7 +114,10 @@ public class GameManager : MonoBehaviour
             if (lightColorIndex < lightColorsOverDay.Length - 1)
             {
                 lightColorIndex++;
-
+                if (lightColorIndex == lightColorsOverDay.Length / 2)
+                {
+                    MusicManager.instance.PlayDramaticGameMusic();
+                }
                 IncreaseSnowAndWind();
             }
         }
