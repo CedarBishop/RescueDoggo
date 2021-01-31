@@ -211,9 +211,11 @@ public class PlayerController : MonoBehaviour
                     closestObject = waypoint.transform;
                 }
             }
+
             if (closestObject != null)
             {
                 closestObject.GetComponent<Interactables>().Interact();
+                animator.SetTrigger("Sniff");
                 if (closestObject.GetComponent<DialoguePrompt>())
                 {
                     //mainCam.LookAt
@@ -237,6 +239,10 @@ public class PlayerController : MonoBehaviour
             }
             if (closestObject != null)
             {
+                if (closestObject.GetComponent<Waypoints>())
+                {
+                    animator.SetTrigger("Sniff");
+                }
                 closestObject.GetComponent<Interactables>().Interact();
                 if (closestObject.GetComponent<DialoguePrompt>())
                 {
