@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 570419711a003c740b3a3aca447f1c86
   - enabled: 1
-    path: Assets/Scenes/Max's Test Scene.unity
-    guid: f5bef54a0e7c95a418b94e49fd5ddf07
+    path: Assets/Scenes/IvanTestScene.unity
+    guid: e3235f83bd67ea6479eb74877f9d8849
   m_configObjects: {}

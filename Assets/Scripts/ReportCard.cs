@@ -13,25 +13,21 @@ public class ReportCard : MonoBehaviour
     {
         int score = GameManager.instance.score;
 
-        if (score >= 50)
+        if (score >= 40)
         {
             gradeText.text = "A+";
         }
-        else if (score >= 40)
+        else if (score >= 30)
         {
             gradeText.text = "A";
         }
-        else if (score >= 30)
+        else if (score >= 20)
         {
             gradeText.text = "B";
         }
-        else if (score >= 20)
-        {
-            gradeText.text = "C";
-        }
         else if (score >= 10)
         {
-            gradeText.text = "D";
+            gradeText.text = "C";
         }
         else if (score >= 0)
         {

@@ -1420,7 +1420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3561543251115442778, guid: 7cb78394cd2271247b107b95bda0de33, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Max's Test Scene
+      value: IvanTestScene
       objectReference: {fileID: 0}
     - target: {fileID: 3561543251115442778, guid: 7cb78394cd2271247b107b95bda0de33, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
