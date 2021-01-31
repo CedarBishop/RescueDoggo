@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5655677738212564974}
   - component: {fileID: 2017044587767349145}
   - component: {fileID: 2525181689841062178}
+  - component: {fileID: 3241918051148508377}
   m_Layer: 0
   m_Name: Glasses
   m_TagString: Untagged
@@ -63,12 +64,20 @@ MonoBehaviour:
   footstepsPrefab: {fileID: 2607187098892703551, guid: bc2bfd55ad86da84b90087c3aaa4e34e, type: 3}
   smellFXPrefab: {fileID: 6780404328772822375, guid: 32f259259450fb74190584d60e424f2b, type: 3}
   meshGlow: {fileID: 7129567414239770151, guid: 155ba4db3e87c8a42ac3764b14723d9f, type: 3}
-  meshes:
-  - {fileID: 8817420064938496483, guid: f2fc7d94ba421bd4fa4de48efc1bc0f4, type: 3}
-  - {fileID: 2674594026298530906, guid: 8daa17cfb3569f04ea4652ed49ee8420, type: 3}
-  - {fileID: 3332036688568600301, guid: 89c37918f0a64154185c040878eb3518, type: 3}
-  - {fileID: 3671088195722877939}
-  - {fileID: 8544936723929738045, guid: c7b9957f860f79d42baafd2d4ddcbee7, type: 3}
+--- !u!114 &3241918051148508377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3671088195722877939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb005d989261674eb14f3c7e454884e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 1, a: 1}
+  radius: 2
 --- !u!1001 &6422771513160990156
 PrefabInstance:
   m_ObjectHideFlags: 0
