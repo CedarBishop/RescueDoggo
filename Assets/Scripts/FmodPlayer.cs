@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class FmodPlayer : MonoBehaviour
 {
-        void RunningSound(string path)
+    private Animator animator;
+
+    private void Start()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(path,GetComponent<Transform>().position);
+        animator = GetComponent<Animator>();
+    }
+
+    void RunningSound(string path)
+    {
+        if (animator.GetFloat("Movement") >0.75f)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+        }        
     }
 
         void BreathingSound(string path)
