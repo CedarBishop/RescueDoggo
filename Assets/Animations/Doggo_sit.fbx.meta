@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: ebda882dd30227e468eba8fb3ab2b903
+guid: 820a65996cf9ef04493e825fda1b7d78
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: 2aca771c23086eb4d93275375ac3d84a, type: 2}
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects: {}
   materials:
     materialImportMode: 2
-    materialName: 1
+    materialName: 0
     materialSearch: 1
     materialLocation: 0
   animations:
@@ -99,7 +97,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

@@ -20,7 +20,7 @@ MonoBehaviour:
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 3.31
+    m_Value: 2
     min: 0
   scatter:
     m_OverrideState: 1
@@ -77,12 +77,12 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.199
+    m_Value: 0.15
     min: 0
     max: 1
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.746
+    m_Value: 0.75
     min: 0.01
     max: 1
   rounded:
@@ -110,11 +110,11 @@ MonoBehaviour:
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.05
     min: 0
     max: 1
   clamp:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.05
     min: 0
     max: 0.2
@@ -137,6 +137,7 @@ MonoBehaviour:
   - {fileID: -5257332621861681507}
   - {fileID: 6934831027534300940}
   - {fileID: 3028789486372755872}
+  - {fileID: 8352307644265033538}
 --- !u!114 &849379129802519247
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -232,11 +233,49 @@ MonoBehaviour:
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: -27
+    m_Value: -10
     min: -100
     max: 100
   tint:
     m_OverrideState: 1
     m_Value: -0
+    min: -100
+    max: 100
+--- !u!114 &8352307644265033538
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  postExposure:
+    m_OverrideState: 0
+    m_Value: 0
+  contrast:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -100
+    max: 100
+  colorFilter:
+    m_OverrideState: 0
+    m_Value: {r: 0.9793067, g: 1.0297431, b: 1.0717734, a: 1}
+    hdr: 1
+    showAlpha: 0
+    showEyeDropper: 1
+  hueShift:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -180
+    max: 180
+  saturation:
+    m_OverrideState: 1
+    m_Value: 15
     min: -100
     max: 100
