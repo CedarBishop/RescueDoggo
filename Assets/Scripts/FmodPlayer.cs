@@ -4,9 +4,25 @@ using UnityEngine;
 
 public class FmodPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();   
+    }
+
     void RunAudio(string path)
     {
-        FMODUnity.RuntimeManager.PlayOneShot(path,GetComponent<Transform>().position);
+        FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
     }
+    void RunningSound(string path)
+    {
+        if (animator.GetFloat("Movement") >= 0.5f)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+        }
+    }
+
 }
+
+
