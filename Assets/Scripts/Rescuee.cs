@@ -19,12 +19,6 @@ public class Rescuee : Interactables
 
     private void Awake()
     {
-        if (!GetComponent<Rigidbody>())
-        {
-            rb = gameObject.AddComponent<Rigidbody>();
-        }
-        rb.isKinematic = true;
-
         camFade = FindObjectOfType<CameraFade>();
     }
 
