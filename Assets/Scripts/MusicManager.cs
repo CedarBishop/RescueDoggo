@@ -58,4 +58,19 @@ public class MusicManager : MonoBehaviour
         audioSource.clip = dramaticGameClip;
         audioSource.Play();
     }
+
+    public void SetMusicVolume (float value)
+    {
+        audioSource.volume = value;
+    }
+
+    public void SetSFXVolume (float value)
+    {
+
+    }
+
+    public float GetMusicVolume()
+    {
+        return audioSource.volume;
+    }
 }

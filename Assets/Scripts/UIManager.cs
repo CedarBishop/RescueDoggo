@@ -24,6 +24,9 @@ public class UIManager : MonoBehaviour
 
     private DialogueCanvas dialogueCanvas;
 
+    public Slider musicSlider;
+    public Slider sfxSlider;
+
     void Awake()
     {
         if (instance == null)
@@ -81,6 +84,8 @@ public class UIManager : MonoBehaviour
 
             case UIState.Options:
                 MenuOptions.SetActive(true);
+                musicSlider.value = MusicManager.instance.GetMusicVolume();
+                sfxSlider.value = 1;
                 Time.timeScale = 0;
                 break;
 
@@ -175,6 +180,16 @@ public class UIManager : MonoBehaviour
     public void RestartButton ()
     {
         GameManager.instance.RestartLevel();
+    }
+
+    public void OnMusicSliderChanged ()
+    {
+        MusicManager.instance.SetMusicVolume(musicSlider.value);
+    }
+
+    public void OnSFXSliderChanged ()
+    {
+        //FMODUnity.Settings.Instance.
     }
 }
 
