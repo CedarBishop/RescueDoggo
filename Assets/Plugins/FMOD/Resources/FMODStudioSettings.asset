@@ -78,7 +78,7 @@ MonoBehaviour:
   identifier: 2c5177b11d81d824dbb064f9ac8527da
   parentIdentifier: default
   displaySortOrder: 0
-  active: 0
+  active: 1
   Properties:
     LiveUpdate:
       Value: 0
@@ -267,8 +267,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../../Audio Projects/rescue-doggo/rescue-doggo.fspro
-  sourceBankPath: ..\..\..\Audio Projects\rescue-doggo\Build
+  sourceProjectPath: ../../RescueDoggo-main/Assets/Audio/rescue-doggo.fspro
+  sourceBankPath: ..\..\RescueDoggo-main\Assets\Audio\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
   identifier: 46fbfdf3fc43db0458918377fd40293e
   parentIdentifier: default
   displaySortOrder: 0
-  active: 0
+  active: 1
   Properties:
     LiveUpdate:
       Value: 0
