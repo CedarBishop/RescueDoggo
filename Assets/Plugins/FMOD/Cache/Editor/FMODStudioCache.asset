@@ -110,6 +110,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-8163880247712105921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/heroMusic/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7520848373740045475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +299,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6212339956269450516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +437,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 21404
+--- !u!114 &-4402096728988167348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dog/land
+  m_EditorClassIdentifier: 
+  Path: event:/Dog/land
+  guid: 298fa49273d0794aa1e5968b9131a23b
+  Banks:
+  - {fileID: 8817439106310339775}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 603
 --- !u!114 &-4240263605009888160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -716,12 +759,14 @@ MonoBehaviour:
   - {fileID: -3408131533337513591}
   - {fileID: 4163568346565966623}
   - {fileID: 8828780294955038948}
+  - {fileID: -4402096728988167348}
+  - {fileID: 3998766147503315588}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8817439106310339775}
   StringsBanks:
   - {fileID: 2132443124774604732}
-  stringsBankWriteTime: 637476937047100392
+  stringsBankWriteTime: 637476961217089688
   cacheVersion: 6
 --- !u!114 &23296197629601236
 MonoBehaviour:
@@ -961,11 +1006,11 @@ MonoBehaviour:
   Path: ../../RescueDoggo-main/Assets/Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476937047100392
+  lastModified: 637476961217089688
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1316
+    Value: 1386
   Exists: 1
 --- !u!114 &2365315419761448643
 MonoBehaviour:
@@ -1056,6 +1101,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7369
+--- !u!114 &3998766147503315588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dog/jump
+  m_EditorClassIdentifier: 
+  Path: event:/Dog/jump
+  guid: 8d17f19a352a0f41ac365a116a862824
+  Banks:
+  - {fileID: 8817439106310339775}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 294
 --- !u!114 &4071665327570192936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,7 +1210,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -6213477106848689682}
+  - {fileID: -8163880247712105921}
   MinDistance: 0
   MaxDistance: 0
   Length: 31219
@@ -1295,7 +1363,7 @@ MonoBehaviour:
   Path: ../../RescueDoggo-main/Assets/Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476937047030492
+  lastModified: 637476961216999924
   LoadResult: 0
   FileSizes: []
   Exists: 1

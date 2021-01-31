@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class FmodPlayer : MonoBehaviour
 {
-    private Animator animator;
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-    void RunAudio(string path)
+        void RunningSound(string path)
     {
         FMODUnity.RuntimeManager.PlayOneShot(path,GetComponent<Transform>().position);
     }
 
-    void BreathAudio(string path)
+        void BreathingSound(string path)
     {
         FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
     }
 
-    void RunningSound(string path)
+    void SniffingSound(string path)
     {
-        if (animator.GetFloat("Movement") >= 0.5f)
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
-        }
+        FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
     }
 
+    void JumpingSound(string path)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+    }
+
+    void LandingSound(string path)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+    }
 }

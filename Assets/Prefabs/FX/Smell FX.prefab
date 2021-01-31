@@ -4872,6 +4872,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7051567235067528839}
     m_Modifications:
+    - target: {fileID: 3403896048177115395, guid: 43c76808180a29e43ab8ee7f631cd0b8, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403896048177115395, guid: 43c76808180a29e43ab8ee7f631cd0b8, type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4135498998367846065, guid: 43c76808180a29e43ab8ee7f631cd0b8, type: 3}
       propertyPath: m_Enabled
       value: 1

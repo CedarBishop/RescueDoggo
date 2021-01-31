@@ -10,16 +10,6 @@ public class DialoguePrompt : Interactables
 
     public string text = "<MISSING TEXT>";
 
-    private Rigidbody rb;
-
-    private void Awake()
-    {
-        if (!GetComponent<Rigidbody>())
-        {
-            rb = gameObject.AddComponent<Rigidbody>();
-            rb.isKinematic = true;
-        }
-    }
 
     public override bool Interact()
     {

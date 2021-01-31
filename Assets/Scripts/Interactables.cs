@@ -7,7 +7,7 @@ public class Interactables : MonoBehaviour
 {
     public bool barkToInteract;
 
-    Rigidbody rb;
+    protected Rigidbody rb;
     protected bool triggered;
 
     public virtual bool Interact ()

@@ -16,5 +16,6 @@ public class LookAtCamera : MonoBehaviour
     void Update()
     {
         transform.LookAt(target);
+        transform.Rotate(Vector3.up, 180);
     }
 }
