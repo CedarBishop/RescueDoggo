@@ -66,6 +66,7 @@ public class UIManager : MonoBehaviour
             case UIState.Main:
                 MenuMain.SetActive(true);
                 Time.timeScale = 0;
+                MusicManager.instance.PlayMenuMusic();
                 break;
 
             case UIState.Game:
