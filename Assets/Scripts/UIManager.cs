@@ -191,7 +191,7 @@ public class UIManager : MonoBehaviour
 
     public void OnSFXSliderChanged ()
     {
-        //FMODUnity.Settings.Instance.
+        
     }
 
     public void ClosePreGame()

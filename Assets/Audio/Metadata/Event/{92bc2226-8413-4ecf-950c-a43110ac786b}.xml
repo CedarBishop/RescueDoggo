@@ -53,7 +53,7 @@
 			<destination>{e8f5a211-e40b-45a5-b6e5-13a9ae882f72}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{80b07f6d-67a9-48bb-8902-4efea27385a9}</destination>
+			<destination>{d0314ebe-2696-46d6-b784-392a179b6541}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{5d92aaef-8d32-4f6a-8633-7acbc08f2812}" />
@@ -101,11 +101,8 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{88db323b-4e02-48b9-9fe1-aeab97b6cfea}">
-		<property name="volume">
-			<value>-11</value>
-		</property>
 		<property name="name">
-			<value>Audio 1</value>
+			<value>Barks</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{1ba4ce38-8ee9-4247-a061-aadaf4bb812d}</destination>
@@ -120,6 +117,8 @@
 	<object class="MixerBusEffectChain" id="{ea180ed4-d263-4c28-b1a9-91324f460185}">
 		<relationship name="effects">
 			<destination>{c6ac6047-157a-49a7-ba10-1f943de4b0bf}</destination>
+			<destination>{179436a4-4055-4d80-a9b6-dbc2244b4ee9}</destination>
+			<destination>{e1c19465-e726-4c71-abce-8ce3db6fa0db}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d8272d97-b2c7-4409-87e2-1a9a65f6bd34}" />
@@ -158,6 +157,22 @@
 	</object>
 	<object class="MixerBusPanner" id="{35063457-e8e7-4c2c-8659-d39d304b0776}" />
 	<object class="MixerBusFader" id="{c6ac6047-157a-49a7-ba10-1f943de4b0bf}" />
+	<object class="DelayEffect" id="{179436a4-4055-4d80-a9b6-dbc2244b4ee9}">
+		<property name="delay">
+			<value>560</value>
+		</property>
+		<property name="feedback">
+			<value>31.5</value>
+		</property>
+		<property name="level">
+			<value>-29</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{e1c19465-e726-4c71-abce-8ce3db6fa0db}">
+		<property name="wetLevel">
+			<value>-11</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{13e85d0d-ee51-4e2e-9491-420111bc2ead}" />
 	<object class="DelayEffect" id="{27265bb0-2896-4a4a-a2bd-bbb31c8e2bc8}">
 		<property name="delay">
