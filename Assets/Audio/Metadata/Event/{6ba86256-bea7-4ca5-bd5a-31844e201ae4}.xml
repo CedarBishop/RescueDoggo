@@ -198,10 +198,10 @@
 	</object>
 	<object class="LoopRegion" id="{9661a58d-0bc3-4943-bc9e-ba9455baf5db}">
 		<property name="position">
-			<value>2.5</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>18.5</value>
+			<value>19.709195402298853</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{19274769-36ad-4cea-aa01-0e6defbe998a}</destination>
@@ -244,8 +244,8 @@
 	<object class="MixerBusEffectChain" id="{56156035-70d3-4eae-b16b-71aae594174b}">
 		<relationship name="effects">
 			<destination>{4a5827f9-b2a1-4d96-9acb-f021ef59d199}</destination>
-			<destination>{2da8c647-d38a-4e9e-ac2a-eabb51b55431}</destination>
-			<destination>{02eae908-a82f-40ae-9c56-0507fe257bb1}</destination>
+			<destination>{7832c9ef-1510-4321-bf02-9ef7bb5d223b}</destination>
+			<destination>{2cd089d9-0924-4cf9-8ef6-feeb9e40d1fe}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{8a1977f0-3b15-4ed8-abe8-b33e49d3417a}" />
@@ -290,12 +290,12 @@
 			<value>0</value>
 		</property>
 		<property name="curveShape">
-			<value>-0.2547189</value>
+			<value>-0.272592813</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{39381ae2-73ef-4c46-8826-6d91f0df359b}">
 		<property name="position">
-			<value>5</value>
+			<value>2.5</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -303,13 +303,13 @@
 	</object>
 	<object class="AutomationPoint" id="{96028f04-1833-4641-8017-16f397c64890}">
 		<property name="position">
-			<value>20.5</value>
+			<value>20</value>
 		</property>
 		<property name="value">
 			<value>1</value>
 		</property>
 		<property name="curveShape">
-			<value>0.25471893</value>
+			<value>0.415965021</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{d4cdb742-3cdf-4dfa-9aa4-4d54dded8d31}">
@@ -331,7 +331,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{4a5827f9-b2a1-4d96-9acb-f021ef59d199}" />
-	<object class="DelayEffect" id="{2da8c647-d38a-4e9e-ac2a-eabb51b55431}">
+	<object class="DelayEffect" id="{7832c9ef-1510-4321-bf02-9ef7bb5d223b}">
 		<property name="delay">
 			<value>580</value>
 		</property>
@@ -339,21 +339,18 @@
 			<value>11.5</value>
 		</property>
 		<property name="level">
-			<value>-45</value>
-		</property>
-		<property name="dryLevel">
-			<value>-3</value>
+			<value>-35</value>
 		</property>
 	</object>
-	<object class="SFXReverbEffect" id="{02eae908-a82f-40ae-9c56-0507fe257bb1}">
+	<object class="SFXReverbEffect" id="{2cd089d9-0924-4cf9-8ef6-feeb9e40d1fe}">
 		<property name="decayTime">
 			<value>1300</value>
 		</property>
 		<property name="wetLevel">
-			<value>-11.5</value>
+			<value>-9</value>
 		</property>
 		<property name="dryLevel">
-			<value>-6</value>
+			<value>-1</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{f71f4cec-977a-48d5-b2ed-3228cfc3ade2}">
@@ -413,10 +410,7 @@
 			<value>11.5</value>
 		</property>
 		<property name="level">
-			<value>-55</value>
-		</property>
-		<property name="dryLevel">
-			<value>-7.5</value>
+			<value>-35</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{d2f6230b-4c8e-4ef3-89d6-be5c15ba1c6e}">
@@ -424,10 +418,10 @@
 			<value>1300</value>
 		</property>
 		<property name="wetLevel">
-			<value>-2</value>
+			<value>-9</value>
 		</property>
 		<property name="dryLevel">
-			<value>-10.5</value>
+			<value>-1</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{75fd72ff-2fed-4851-9dbb-3319001cf369}">

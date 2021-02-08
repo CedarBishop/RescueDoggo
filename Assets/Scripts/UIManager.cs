@@ -35,9 +35,9 @@ public class UIManager : MonoBehaviour
     FMOD.Studio.Bus Music;
     FMOD.Studio.Bus Ambience;
 
-    public float SFXVolume = 1f;
-    public float MusicVolume = 1f;
-    public float AmbienceVolume = 1f;
+    float SFXVolume = 1f;
+    float MusicVolume = 1f;
+    float AmbienceVolume = 1f;
 
     void Awake()
     {
