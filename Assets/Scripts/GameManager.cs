@@ -122,7 +122,6 @@ public class GameManager : MonoBehaviour
                 if (lightColorIndex == lightColorsOverDay.Length / 2)
                 {
                     MusicManager.instance.PlayDramaticGameMusic();
-                    //ambienceEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 }
                 IncreaseSnowAndWind();
             }

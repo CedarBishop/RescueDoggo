@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="MixerGroup" id="{d0314ebe-2696-46d6-b784-392a179b6541}">
-		<property name="volume">
-			<value>-6</value>
-		</property>
 		<property name="name">
 			<value>SFX</value>
 		</property>

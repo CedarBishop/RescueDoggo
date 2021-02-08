@@ -140,6 +140,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d4fdd6994208e4ca53f1fe9f0b88d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &43195345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43195340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Other/UIclick
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &125460494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -210,7 +233,11 @@ PrefabInstance:
     - target: {fileID: 4576453514350555187, guid: 319c9ba0b0349c34493ecd00bc6a2684, type: 3}
       propertyPath: menuClip
       value: 
-      objectReference: {fileID: 8300000, guid: 906f38a41504c1448a4b2a823ad5b9da, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576453514350555187, guid: 319c9ba0b0349c34493ecd00bc6a2684, type: 3}
+      propertyPath: EventPath
+      value: event:/Music/MenuMusic
+      objectReference: {fileID: 0}
     - target: {fileID: 4576453514350555187, guid: 319c9ba0b0349c34493ecd00bc6a2684, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -218,7 +245,15 @@ PrefabInstance:
     - target: {fileID: 4576453514350555187, guid: 319c9ba0b0349c34493ecd00bc6a2684, type: 3}
       propertyPath: menuIntroClip
       value: 
-      objectReference: {fileID: 8300000, guid: dc3187b199d6a6049961432ec00f02e4, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576453514350555187, guid: 319c9ba0b0349c34493ecd00bc6a2684, type: 3}
+      propertyPath: MainMusicEventPath
+      value: event:/Music/MainMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576453514350555187, guid: 319c9ba0b0349c34493ecd00bc6a2684, type: 3}
+      propertyPath: MenuMusicEventPath
+      value: event:/Music/MenuMusic
+      objectReference: {fileID: 0}
     - target: {fileID: 8491842499803686467, guid: 319c9ba0b0349c34493ecd00bc6a2684, type: 3}
       propertyPath: Loop
       value: 0

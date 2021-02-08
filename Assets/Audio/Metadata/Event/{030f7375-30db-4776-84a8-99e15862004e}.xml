@@ -121,9 +121,15 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{5a17396e-96ee-45d4-b2ec-1b1b1c1b9360}">
+		<property name="volume">
+			<value>3</value>
+		</property>
 		<property name="name">
 			<value>Snow</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{88dd282d-31ca-4722-96d5-068e37fbc975}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{288f7968-6421-4501-93ee-9fb0359ec6cd}</destination>
 		</relationship>
@@ -188,9 +194,19 @@
 			<destination>{bec17de2-401b-477d-8c04-ad0139fef0fc}</destination>
 		</relationship>
 	</object>
+	<object class="RandomizerModulator" id="{88dd282d-31ca-4722-96d5-068e37fbc975}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>7.5</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{288f7968-6421-4501-93ee-9fb0359ec6cd}">
 		<relationship name="effects">
 			<destination>{26ab48b0-db31-4056-8ef6-ee8dcb60b03c}</destination>
+			<destination>{d9ae36ae-b7b4-499a-8ed8-b6c50ae4a682}</destination>
+			<destination>{f425beaa-1ded-4be1-b792-0bdc6809be8a}</destination>
 			<destination>{ad898967-a6a5-440d-ba0e-34a86299a1d2}</destination>
 		</relationship>
 	</object>
@@ -218,6 +234,28 @@
 	<object class="MixerBusPanner" id="{bacc6293-36a2-4fdd-8180-514ada553f74}" />
 	<object class="MixerBusFader" id="{738413af-3255-4d7b-ac6a-e753cf4ed117}" />
 	<object class="MixerBusFader" id="{26ab48b0-db31-4056-8ef6-ee8dcb60b03c}" />
+	<object class="PitchShifterEffect" id="{d9ae36ae-b7b4-499a-8ed8-b6c50ae4a682}">
+		<property name="pitch">
+			<value>1.02999997</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{04823b39-7b5e-403a-a427-2179077eb95e}</destination>
+		</relationship>
+	</object>
+	<object class="ThreeEQEffect" id="{f425beaa-1ded-4be1-b792-0bdc6809be8a}">
+		<property name="midGain">
+			<value>-5.5</value>
+		</property>
+		<property name="highGain">
+			<value>9</value>
+		</property>
+		<property name="highCrossover">
+			<value>3000</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{f397aa9f-8287-412f-a5a9-e017a7cce93c}</destination>
+		</relationship>
+	</object>
 	<object class="SFXReverbEffect" id="{ad898967-a6a5-440d-ba0e-34a86299a1d2}">
 		<property name="decayTime">
 			<value>2100</value>
@@ -230,4 +268,20 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{6dc05d36-e8aa-41eb-98f0-4273fcef5a10}" />
+	<object class="RandomizerModulator" id="{04823b39-7b5e-403a-a427-2179077eb95e}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>24.5</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{f397aa9f-8287-412f-a5a9-e017a7cce93c}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>midGain</value>
+		</property>
+		<property name="amount">
+			<value>13.5</value>
+		</property>
+	</object>
 </objects>

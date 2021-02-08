@@ -57,6 +57,9 @@ public class UIManager : MonoBehaviour
         timeOfDayFillImage.fillAmount = progress;
     }
 
+    // Run this on every UI mousedown event: 
+    // FMODUnity.RuntimeManager.PlayOneShot("event:/Other/UIclick");
+
     public void ChangeMenu(UIState newMenu)
     {
         MenuMain.SetActive(false);
@@ -71,7 +74,8 @@ public class UIManager : MonoBehaviour
             case UIState.Main:
                 MenuMain.SetActive(true);
                 Time.timeScale = 0;
-                MusicManager.instance.PlayMenuMusic();
+                // this probably needs a check to see if menu music is already playing or not
+                // MusicManager.instance.PlayMenuMusic();
                 break;
 
             case UIState.Game:
@@ -86,7 +90,7 @@ public class UIManager : MonoBehaviour
 
             case UIState.Options:
                 MenuOptions.SetActive(true);
-                musicSlider.value = MusicManager.instance.GetMusicVolume();
+                //musicSlider.value = FmodPlayer.MusicVolume;
                 sfxSlider.value = 1;
                 Time.timeScale = 0;
                 break;
@@ -98,6 +102,7 @@ public class UIManager : MonoBehaviour
 
             case UIState.EndGame:
                 MenuEndGame.SetActive(true);
+                //MusicManager.MainMusicInst.stop (FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 ReportCard reportCard = MenuEndGame.GetComponent<ReportCard>();
                 reportCard.Initialise();
                 Time.timeScale = 0;
