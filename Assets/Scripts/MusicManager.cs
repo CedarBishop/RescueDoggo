@@ -84,6 +84,11 @@ public class MusicManager : MonoBehaviour
         //FMOD stuff
     }
 
+    public void SetAmbienceVolume (float value)
+    {
+
+    }
+
    // public float GetMusicVolume()
    // {
        // return audioSource.volume * 2;
@@ -94,6 +99,9 @@ public class MusicManager : MonoBehaviour
 {
     yield return new WaitForSeconds(introDelay);
 }
-
+    void OnDestroy()
+    {
+        MainMusicInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
 }
 

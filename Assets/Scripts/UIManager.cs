@@ -28,6 +28,16 @@ public class UIManager : MonoBehaviour
 
     public Slider musicSlider;
     public Slider sfxSlider;
+    public Slider ambienceSlider;
+
+    FMOD.Studio.EventInstance SFXVolumeTestEvent;
+    FMOD.Studio.Bus SFXSounds;
+    FMOD.Studio.Bus Music;
+    FMOD.Studio.Bus Ambience;
+
+    public float SFXVolume = 1f;
+    public float MusicVolume = 1f;
+    public float AmbienceVolume = 1f;
 
     void Awake()
     {
@@ -39,11 +49,44 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        SFXSounds = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
+        Music = FMODUnity.RuntimeManager.GetBus("bus:/Music");
+        Ambience = FMODUnity.RuntimeManager.GetBus("bus:/Ambience");
+        SFXVolumeTestEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Other/SFXTestBark");
     }
 
     private void Start()
     {
         dialogueCanvas = Instantiate(dialogueCanvasPrefab, transform.position, Quaternion.identity);
+    }
+
+    void Update()
+    {
+        SFXSounds.setVolume(SFXVolume);
+        Music.setVolume(MusicVolume);
+        Ambience.setVolume(AmbienceVolume);
+    }
+
+    public void SFXVolumeLevel(float newSFXVolume)
+    {
+        SFXVolume = newSFXVolume;
+        FMOD.Studio.PLAYBACK_STATE Pbstate;
+        SFXVolumeTestEvent.getPlaybackState(out Pbstate);
+        if (Pbstate != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            SFXVolumeTestEvent.start();
+        }
+    }
+
+    public void MusicVolumeLevel(float newMusicVolume)
+    {
+        MusicVolume = newMusicVolume;
+    }
+
+    public void AmbienceVolumeLevel(float newAmbienceVolume)
+    {
+        AmbienceVolume = newAmbienceVolume;
     }
 
     public void SetScore (int value)
@@ -196,7 +239,12 @@ public class UIManager : MonoBehaviour
 
     public void OnSFXSliderChanged ()
     {
-        
+        MusicManager.instance.SetSFXVolume(sfxSlider.value);
+    }
+
+    public void OnAmbienceSliderChanged()
+    {
+        MusicManager.instance.SetAmbienceVolume(ambienceSlider.value);
     }
 
     public void ClosePreGame()
