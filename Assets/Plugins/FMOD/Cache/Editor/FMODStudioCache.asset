@@ -315,6 +315,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 772
+--- !u!114 &-8337514222162881233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/running/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-8335999776640610976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,7 +953,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2884712348696452890}
+  - {fileID: 7877544435149289379}
   MinDistance: 0
   MaxDistance: 0
   Length: 31219
@@ -1653,7 +1673,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5315266400002507882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1685,6 +1705,26 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Heroic2/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-5136276882754273599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/UIclick/Intensity
   m_EditorClassIdentifier: 
   Name: Intensity
   Min: 0
@@ -2441,6 +2481,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-2934540610510736207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/blizzard/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-2920445031410536642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2503,7 +2563,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2848533187875673879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2759,6 +2819,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-2049818553464549980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/running/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-2019522086534331448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3343,7 +3423,7 @@ MonoBehaviour:
   Path: Assets/Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637487248157301974
+  lastModified: 637487264169651246
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -3506,7 +3586,7 @@ MonoBehaviour:
   - {fileID: -266392870762755003}
   StringsBanks:
   - {fileID: 6694352032191517425}
-  stringsBankWriteTime: 637487248157371589
+  stringsBankWriteTime: 637487264169711088
   cacheVersion: 6
 --- !u!114 &23296197629601236
 MonoBehaviour:
@@ -3673,7 +3753,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &422342021306023333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3763,6 +3843,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 17943
+--- !u!114 &690176009401181688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/blizzard/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &701357410771329061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4209,6 +4309,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7369
+--- !u!114 &1476333267455581839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/running/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &1533355507470235722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4323,6 +4443,26 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/blizzard/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &1864118281596981590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainMusic/Intensity
   m_EditorClassIdentifier: 
   Name: Intensity
   Min: 0
@@ -4458,7 +4598,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2046251092487534381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4651,6 +4791,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 31219
+--- !u!114 &2411349810648453063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/blizzard/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &2656053859956506754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4727,6 +4887,26 @@ MonoBehaviour:
   m_Name: parameter:/running/Material
   m_EditorClassIdentifier: 
   Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &2860666558665421735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/blizzard/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
   Min: 0
   Max: 1
   Default: 0
@@ -4877,6 +5057,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &3238242062791438779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/running/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &3268947771122002374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4920,6 +5120,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2600
+--- !u!114 &3396354241167308833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/UIclick/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &3446409457062695865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5007,6 +5227,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 816
+--- !u!114 &3587168335795034588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainMusic/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &3611280513802099652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5113,7 +5353,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 314959373767438510}
+  - {fileID: -2934540610510736207}
   MinDistance: 0
   MaxDistance: 0
   Length: 22000
@@ -5636,6 +5876,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &4668220508690178757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainMusic/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &4699056070073470870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5766,7 +6026,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -5401102160066207936}
+  - {fileID: 3238242062791438779}
   MinDistance: 0
   MaxDistance: 0
   Length: 625
@@ -5896,7 +6156,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 2042573093100691847}
+  - {fileID: 6935680350922810338}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -6461,7 +6721,7 @@ MonoBehaviour:
   Path: Assets/Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637487248157371589
+  lastModified: 637487264169711088
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -6549,6 +6809,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1900
+--- !u!114 &6935680350922810338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/UIclick/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6948000421623835049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6698,6 +6978,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 833
+--- !u!114 &7331427466260913862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/UIclick/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &7356527168795718017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6884,6 +7184,26 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Heroic2/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &7877544435149289379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainMusic/Intensity
   m_EditorClassIdentifier: 
   Name: Intensity
   Min: 0
