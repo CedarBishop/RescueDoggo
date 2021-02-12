@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Curtains
   - Tutorial
+  - 'Material: Snow'
+  - 'Material: Water'
   layers:
   - Default
   - TransparentFX
