@@ -168,13 +168,13 @@
 	</object>
 	<object class="DelayEffect" id="{179436a4-4055-4d80-a9b6-dbc2244b4ee9}">
 		<property name="delay">
-			<value>560</value>
+			<value>1000</value>
 		</property>
 		<property name="feedback">
-			<value>31.5</value>
+			<value>11.5</value>
 		</property>
 		<property name="level">
-			<value>-29</value>
+			<value>-30</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{e1c19465-e726-4c71-abce-8ce3db6fa0db}">
@@ -204,7 +204,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>13</value>
+			<value>9</value>
 		</property>
 	</object>
 </objects>
