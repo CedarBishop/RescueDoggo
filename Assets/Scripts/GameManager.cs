@@ -137,6 +137,7 @@ public class GameManager : MonoBehaviour
         score += scoreAdded;
         rescuedPersonNames.Add(rescueeName);
         UIManager.instance.SetScore(score);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Other/Score +1");
     }
 
     void IncreaseSnowAndWind ()

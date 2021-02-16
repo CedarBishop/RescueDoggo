@@ -7,14 +7,15 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance = null;
 
-    public AudioClip menuIntroClip;
-    public AudioClip menuClip;
-    public AudioClip gameClip;
-    public AudioClip dramaticGameClip;
-
-    private AudioSource audioSource;
-
     private float introDelay;
+
+    [FMODUnity.EventRef]
+    public string MenuMusicEventPath;
+    [FMODUnity.EventRef]
+    public string MainMusicEventPath;
+    FMOD.Studio.EventInstance MenuMusicInst;
+    FMOD.Studio.EventInstance MainMusicInst;
+    FMOD.Studio.EventInstance Ambience;
 
     private void Awake()
     {
@@ -28,68 +29,79 @@ public class MusicManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
-        audioSource = GetComponent<AudioSource>();
-        audioSource.loop = true;
+        
     }
 
     private void Start()
     {
         if (SceneManager.GetActiveScene().name == "Main")
         {
-            PlayMenuMusic();
+            MenuMusicInst = FMODUnity.RuntimeManager.CreateInstance(MenuMusicEventPath);
+            MenuMusicInst.start();
+            MenuMusicInst.release();
         }
+
+        Ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience/blizzard");
+        Ambience.start();
+        Ambience.release();
+
     }
 
     public void PlayMenuMusic()
     {
-        introDelay = menuIntroClip.length;
-        StartCoroutine("CoMenuMusic");
+        MenuMusicInst = FMODUnity.RuntimeManager.CreateInstance(MenuMusicEventPath);
+        // MenuMusicInst.start();
+        MenuMusicInst.release();
+        Ambience.setParameterByName("Intensity", 0f);
     }
 
-    public void PlayChillGameMusic ()
+    public void PlayChillGameMusic()
     {
         StopCoroutine("CoMenuMusic");
-
-        audioSource.clip = gameClip;
-        audioSource.loop = true;
-        audioSource.Play();
+        MenuMusicInst.release();
+        MenuMusicInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        MainMusicInst = FMODUnity.RuntimeManager.CreateInstance(MainMusicEventPath);
+        MainMusicInst.start();
+        Ambience.setParameterByName("Intensity", 0f);
+        MainMusicInst.setParameterByName("Intensity", 0f);
+        MainMusicInst.release();
     }
 
     public void PlayDramaticGameMusic()
     {
         StopCoroutine("CoMenuMusic");
-
-        audioSource.clip = dramaticGameClip;
-        audioSource.loop = true;
-        audioSource.Play();
+        Ambience.setParameterByName("Intensity", 1f);
+        MainMusicInst.setParameterByName("Intensity", 1f);
     }
 
     public void SetMusicVolume (float value)
     {
-        audioSource.volume = value / 2;
+        //audioSource.volume = value / 2;
     }
 
     public void SetSFXVolume (float value)
     {
+        //FMOD stuff
+    }
+
+    public void SetAmbienceVolume (float value)
+    {
 
     }
 
-    public float GetMusicVolume()
+   // public float GetMusicVolume()
+   // {
+       // return audioSource.volume * 2;
+
+    //}
+    IEnumerator CoMenuMusic()
+
+{
+    yield return new WaitForSeconds(introDelay);
+}
+    void OnDestroy()
     {
-        return audioSource.volume * 2;
-    }
-
-    IEnumerator CoMenuMusic ()
-    {
-        audioSource.loop = false;
-        audioSource.clip = menuIntroClip;
-        audioSource.Play();
-
-        yield return new WaitForSeconds(introDelay);
-
-        audioSource.clip = menuClip;
-        audioSource.loop = true;
-        audioSource.Play();
+        MainMusicInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
+

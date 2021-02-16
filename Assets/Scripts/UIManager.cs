@@ -28,6 +28,16 @@ public class UIManager : MonoBehaviour
 
     public Slider musicSlider;
     public Slider sfxSlider;
+    public Slider ambienceSlider;
+
+    FMOD.Studio.EventInstance SFXVolumeTestEvent;
+    FMOD.Studio.Bus SFXSounds;
+    FMOD.Studio.Bus Music;
+    FMOD.Studio.Bus Ambience;
+
+    float SFXVolume = 1f;
+    float MusicVolume = 1f;
+    float AmbienceVolume = 1f;
 
     void Awake()
     {
@@ -39,11 +49,44 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        SFXSounds = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
+        Music = FMODUnity.RuntimeManager.GetBus("bus:/Music");
+        Ambience = FMODUnity.RuntimeManager.GetBus("bus:/Ambience");
+        SFXVolumeTestEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Other/SFXTestBark");
     }
 
     private void Start()
     {
         dialogueCanvas = Instantiate(dialogueCanvasPrefab, transform.position, Quaternion.identity);
+    }
+
+    void Update()
+    {
+        SFXSounds.setVolume(SFXVolume);
+        Music.setVolume(MusicVolume);
+        Ambience.setVolume(AmbienceVolume);
+    }
+
+    public void SFXVolumeLevel(float newSFXVolume)
+    {
+        SFXVolume = newSFXVolume;
+        FMOD.Studio.PLAYBACK_STATE Pbstate;
+        SFXVolumeTestEvent.getPlaybackState(out Pbstate);
+        if (Pbstate != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            SFXVolumeTestEvent.start();
+        }
+    }
+
+    public void MusicVolumeLevel(float newMusicVolume)
+    {
+        MusicVolume = newMusicVolume;
+    }
+
+    public void AmbienceVolumeLevel(float newAmbienceVolume)
+    {
+        AmbienceVolume = newAmbienceVolume;
     }
 
     public void SetScore (int value)
@@ -56,6 +99,9 @@ public class UIManager : MonoBehaviour
         float progress = (totalTime - timeRemaining) / totalTime;
         timeOfDayFillImage.fillAmount = progress;
     }
+
+    // Run this on every UI mousedown event: 
+    // FMODUnity.RuntimeManager.PlayOneShot("event:/Other/UIclick");
 
     public void ChangeMenu(UIState newMenu)
     {
@@ -71,7 +117,8 @@ public class UIManager : MonoBehaviour
             case UIState.Main:
                 MenuMain.SetActive(true);
                 Time.timeScale = 0;
-                MusicManager.instance.PlayMenuMusic();
+                // this probably needs a check to see if menu music is already playing or not
+                // MusicManager.instance.PlayMenuMusic();
                 break;
 
             case UIState.Game:
@@ -86,7 +133,7 @@ public class UIManager : MonoBehaviour
 
             case UIState.Options:
                 MenuOptions.SetActive(true);
-                musicSlider.value = MusicManager.instance.GetMusicVolume();
+                //musicSlider.value = FmodPlayer.MusicVolume;
                 sfxSlider.value = 1;
                 Time.timeScale = 0;
                 break;
@@ -98,6 +145,7 @@ public class UIManager : MonoBehaviour
 
             case UIState.EndGame:
                 MenuEndGame.SetActive(true);
+                //MusicManager.MainMusicInst.stop (FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 ReportCard reportCard = MenuEndGame.GetComponent<ReportCard>();
                 reportCard.Initialise();
                 Time.timeScale = 0;
@@ -191,7 +239,12 @@ public class UIManager : MonoBehaviour
 
     public void OnSFXSliderChanged ()
     {
-        //FMODUnity.Settings.Instance.
+        MusicManager.instance.SetSFXVolume(sfxSlider.value);
+    }
+
+    public void OnAmbienceSliderChanged()
+    {
+        MusicManager.instance.SetAmbienceVolume(ambienceSlider.value);
     }
 
     public void ClosePreGame()
