@@ -238,32 +238,21 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            foreach (Transform t in interactableObjects)
+            foreach (Transform interactable in interactableObjects)
             {
-                if (t == null)
-                {
-                    continue;
-                }
-                if (Vector3.Distance(transform.position, t.position) < distance)
-                {
-                    closestObject = t;
-                }
-            }
-            if (closestObject != null)
-            {
-                if (closestObject.GetComponent<Waypoints>())
+                if (interactable.GetComponent<Waypoints>())
                 {
                     animator.SetTrigger("Sniff");
                 }
-                closestObject.GetComponent<Interactables>().Interact();
-                if (closestObject.GetComponent<DialoguePrompt>())
+                interactable.GetComponent<Interactables>().Interact();
+                if (interactable.GetComponent<DialoguePrompt>())
                 {
                     //mainCam.LookAt
                     // Zoom camera to look at object
                     transitionCamera = !transitionCamera;
                     if (transitionCamera == false)
                     {
-                        closestObject.GetComponent<DialoguePrompt>().dialogueAlert.SetActive(true);
+                        interactable.GetComponent<DialoguePrompt>().dialogueAlert.SetActive(true);
                     }
                 }
             }

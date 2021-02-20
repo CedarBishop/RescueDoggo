@@ -16,7 +16,8 @@ public class DialogueCanvas : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
-        Deactivate();        
+        Deactivate();
+        transform.forward = (transform.position - mainCamera.transform.position).normalized;
     }
 
     public void ToggleActivation(Vector3 worldPosition, string text)
@@ -41,6 +42,7 @@ public class DialogueCanvas : MonoBehaviour
         dialogueText.text = text;
         CinemachineVirtualCamera cvc = FindObjectOfType<CinemachineVirtualCamera>();
         cvc.LookAt = transform;
+        transform.forward = (transform.position - cvc.transform.position).normalized;
     }
 
     public void Deactivate ()
@@ -49,10 +51,6 @@ public class DialogueCanvas : MonoBehaviour
         dialogueBackgroundImage.gameObject.SetActive(false);
         CinemachineVirtualCamera cvc = FindObjectOfType<CinemachineVirtualCamera>();
         cvc.LookAt = FindObjectOfType<PlayerController>().gameObject.transform;
-    }
-
-    private void Update()
-    {
-        transform.forward = (transform.position - mainCamera.transform.position).normalized;
+        transform.forward = (transform.position - cvc.transform.position).normalized;
     }
 }
